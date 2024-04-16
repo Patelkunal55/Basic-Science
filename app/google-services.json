@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "944826236814",
+    "firebase_url": "https://basicscience.firebaseio.com",
+    "project_id": "basicscience",
+    "storage_bucket": "basicscience.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944826236814:android:a5a8ef0d3f1a160d",
+        "android_client_info": {
+          "package_name": "com.torque.patel.basicscience"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944826236814-d5pkadh202b0mt8indb0kaqvs2u869d5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.torque.patel.basicscience",
+            "certificate_hash": "ab08ad4ab728c6f9b44e1728a706e6e0fe806089"
+          }
+        },
+        {
+          "client_id": "944826236814-6a5e9aourukdl9h0n1sgv07qoqqk2i8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkv0dF_DtL89MKxi16xajOt_fz5RqXA6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944826236814-6a5e9aourukdl9h0n1sgv07qoqqk2i8b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
