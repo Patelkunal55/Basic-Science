@@ -19,8 +19,11 @@ class FirstChapViewHolder(private val binding:FirstChap1Binding, private val cli
     }
     fun bind(dataChap: DataChap){
 
+
+
         binding.numbering.text = dataChap.no.toString()
         binding.nameChapter.text = dataChap.chapterName
+        binding.rectangleImgId.setImageResource(dataChap.rectangle_icon)
 
     }
 

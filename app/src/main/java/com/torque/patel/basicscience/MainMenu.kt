@@ -26,19 +26,34 @@ class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.menu_toolbar)
-        toolbar.title = "Main Menu"
-        setSupportActionBar(toolbar)
+
+        ToolBar()
+
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-
         recyclerView.adapter = MenuAdapter(getList(),this)
 
         //recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = GridLayoutManager(this,2)
         recyclerView.setHasFixedSize(true)
 
+        NavigationDrawer()
 
+
+
+
+
+    }
+
+    private fun ToolBar(){
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.menu_toolbar)
+        toolbar.setTitleTextColor(resources.getColor(R.color.colorWhite))
+        toolbar.title = "Main Menu"
+        setSupportActionBar(toolbar)
+    }
+
+
+    private fun NavigationDrawer(){
         drawerLayout = findViewById(R.id.my_drawer_layout)
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close)
 
@@ -47,19 +62,39 @@ class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
         actionBarDrawerToggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-
         val navigationView = findViewById<NavigationView>(R.id.navigation_view)
         navigationView.setNavigationItemSelectedListener {menuItem ->
             when(menuItem.itemId){
-                R.id.nav_account -> {
+                R.id.nav_main -> {
                     // Handle click on item 1
-                    showToast("My Account Clicked!")
+                    showToast("Home")
                     true
                 }
-                R.id.nav_settings -> {
+                R.id.nav_physics -> {
                     // Handle click on item 2
-                    showToast("Setting Clicked!")
+                    showToast("Physics")
+                    true
+                }
+
+                R.id.nav_chemistry -> {
+                    // Handle click on item 2
+                    showToast("Chemistry")
+                    true
+                }
+                R.id.nav_biology -> {
+                    // Handle click on item 2
+                    showToast("Biology")
+                    true
+                }
+
+                R.id.policy -> {
+                    // Handle click on item 2
+                    showToast("Policy")
+                    true
+                }
+                R.id.exit -> {
+                    // Handle click on item 2
+                    showToast("Exit")
                     true
                 }
                 else -> false

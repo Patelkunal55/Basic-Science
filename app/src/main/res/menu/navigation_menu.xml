@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/nav_account"
-        android:title="My Account" />
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_physics"
+            android:icon="@drawable/ic_black_dot"
+            android:title="Physics" />
+        <item
+            android:id="@+id/nav_chemistry"
+            android:icon="@drawable/ic_black_dot"
+            android:title="Chemistry" />
+        <item
+            android:id="@+id/nav_biology"
+            android:icon="@drawable/ic_black_dot"
+            android:title="Biology" />
 
-    <item
-        android:id="@+id/nav_settings"
-        android:title="Settings" />
+    </group>
 
-    <item
-        android:id="@+id/nav_logout"
-        android:title="Logout" />
+    <item android:title="Exit">
+        <menu>
+            <item
+                android:id="@+id/policy"
+                android:icon="@drawable/ic_policy"
+                android:title="Policy" />
+
+            <item
+                android:id="@+id/exit"
+                android:icon="@drawable/ic_exit"
+                android:title="Exit" />
+
+        </menu>
+    </item>
 </menu>
