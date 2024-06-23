@@ -3,15 +3,28 @@ package com.torque.patel.basicscience
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.torque.patel.basicscience.ChemViewAdapter.Companion.FIRST_VIEW
 import com.torque.patel.basicscience.ChemViewAdapter.Companion.SECOND_VIEW
 import com.torque.patel.basicscience.ChemViewAdapter.Companion.THIRD_VIEW
 import com.torque.patel.basicscience.databinding.ActivityChemistryBinding
+import com.torque.patel.basicscience.databinding.ActivityMainBinding
 
 
 private lateinit var binding:ActivityChemistryBinding
 
 class Chemistry : AppCompatActivity(), OnItemClickListners {
+    private lateinit var adView: AdView
+    private lateinit var adRequest: AdRequest
+
+    private var mInterstitialAd: InterstitialAd? = null
+    private final val TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChemistryBinding.inflate(layoutInflater)
@@ -19,9 +32,53 @@ class Chemistry : AppCompatActivity(), OnItemClickListners {
 
         initView()
 
+        bannerAds()
+
+        interstitialAds()
+
 
 
     }
+
+
+    private fun bannerAds(){
+        MobileAds.initialize(this)
+        adView = findViewById(R.id.chem_adView)
+        adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+    }
+
+    private fun interstitialAds(){
+        MobileAds.initialize(this)
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                //Log.d(TAG, adError?.toString())
+                mInterstitialAd = null
+
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                //Log.d(TAG, 'Ad was loaded.')
+                mInterstitialAd = interstitialAd
+                shows()
+            }
+        })
+    }
+
+    private fun shows(){
+
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this)
+
+        } else {
+            //Toast.makeText(this,TAG+ "Not showing Ads",Toast.LENGTH_SHORT).show()
+            //Log.d("TAG", "The interstitial ad wasn't ready yet.")
+
+        }
+    }
+
 
     private fun initView(){
         binding.chemRecyclerView.layoutManager = LinearLayoutManager(this@Chemistry)

@@ -4,12 +4,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.torque.patel.basicscience.BioViewAdapter.Companion.FIRST_VIEW
 import com.torque.patel.basicscience.BioViewAdapter.Companion.SECOND_VIEW
 import com.torque.patel.basicscience.BioViewAdapter.Companion.THIRD_VIEW
 import com.torque.patel.basicscience.databinding.ActivityBiologyBinding
+import com.torque.patel.basicscience.databinding.ActivityMainBinding
 
 class Biology : AppCompatActivity() {
+
+
+    private lateinit var adView: AdView
+    private lateinit var adRequest: AdRequest
+
+    private var mInterstitialAd: InterstitialAd? = null
+    private final val TAG = "MainActivity"
 
     private lateinit var binding: ActivityBiologyBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +33,10 @@ class Biology : AppCompatActivity() {
 
         initView()
 
+        bannerAds()
+
+        interstitialAds()
+
 
     }
 
@@ -26,6 +44,47 @@ class Biology : AppCompatActivity() {
         binding.bioRecyclerView.layoutManager = LinearLayoutManager(this@Biology)
         binding.bioRecyclerView.adapter = BioViewAdapter(getList())
     }
+
+
+    private fun bannerAds(){
+        MobileAds.initialize(this)
+        adView = findViewById(R.id.bio_adView)
+        adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+    }
+
+
+    private fun interstitialAds(){
+        MobileAds.initialize(this)
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                //Log.d(TAG, adError?.toString())
+                mInterstitialAd = null
+
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                //Log.d(TAG, 'Ad was loaded.')
+                mInterstitialAd = interstitialAd
+                shows()
+            }
+        })
+    }
+
+    private fun shows(){
+
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this)
+
+        } else {
+            //Toast.makeText(this,TAG+ "Not showing Ads",Toast.LENGTH_SHORT).show()
+            //Log.d("TAG", "The interstitial ad wasn't ready yet.")
+
+        }
+    }
+
 
 
     private fun getList(): ArrayList<Any> {

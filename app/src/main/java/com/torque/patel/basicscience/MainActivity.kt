@@ -1,8 +1,22 @@
 package com.torque.patel.basicscience
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Application
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.firebase.Firebase
+import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.analytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.logEvent
 import com.torque.patel.basicscience.MultiViewAdapter.Companion.FIRST_VIEW
 import com.torque.patel.basicscience.MultiViewAdapter.Companion.SECOND_VIEW
 import com.torque.patel.basicscience.MultiViewAdapter.Companion.THIRD_VIEW
@@ -10,17 +24,121 @@ import com.torque.patel.basicscience.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
+   // private lateinit var firebaseAnalytics : FirebaseAnalytics
+
+    private lateinit var adView: AdView
+    private lateinit var adRequest: AdRequest
+
     private lateinit var binding:ActivityMainBinding
+
+    private var mInterstitialAd: InterstitialAd? = null
+    private final val TAG = "MainActivity"
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        //firebaseAnalytics = Firebase.analytics
+
+
         initView()
+
+        bannerAds()
+
+        loadInterstitialAd()
+
+        screenRecord()
+
+        buttonClicked()
+
+
+
+
+
 
 
     }
+
+    private fun bannerAds(){
+        MobileAds.initialize(this)
+        adView = findViewById(R.id.adView)
+        adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+    }
+
+    private fun loadInterstitialAd(){
+        MobileAds.initialize(this)
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                //Log.d(TAG, adError?.toString())
+                mInterstitialAd = null
+
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                //Log.d(TAG, 'Ad was loaded.')
+                mInterstitialAd = interstitialAd
+                shows()
+            }
+        })
+
+
+
+
+
+    }
+
+    private fun shows(){
+
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this)
+
+        } else {
+            //Toast.makeText(this,TAG+ "Not showing Ads",Toast.LENGTH_SHORT).show()
+            //Log.d("TAG", "The interstitial ad wasn't ready yet.")
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /** Called when leaving the activity. */
+    public override fun onPause() {
+        adView?.pause()
+        super.onPause()
+    }
+
+    /** Called when returning to the activity. */
+    public override fun onResume() {
+        super.onResume()
+        adView?.resume()
+    }
+
+    /** Called before the activity is destroyed. */
+
+
 
     private fun initView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
@@ -75,70 +193,80 @@ class MainActivity : AppCompatActivity() {
          return when(number){
 
              0 -> {
-                 arrayListOf(//1.Unit
-                     DataModel(FIRST_VIEW,"1.Units",resources.getString(R.string.phy1)),
-                     DataPhyTable(SECOND_VIEW,resources.getString(R.string.tablephy1)),
-                     DataModel(FIRST_VIEW,"",resources.getString(R.string.phy2)),
-                     DataPhyTable(SECOND_VIEW,resources.getString(R.string.tablephy2)),
-                     DataPhyTable(SECOND_VIEW,resources.getString(R.string.tablephy3)),
-                     DataPhyTable(SECOND_VIEW,resources.getString(R.string.tablephy4)),
+                 arrayListOf(
+//1.Unit
+                     DataModel(FIRST_VIEW, "1.Units", resources.getString(R.string.phy1)),
+                     DataPhyTable(SECOND_VIEW, resources.getString(R.string.tablephy1)),
+                     DataModel(FIRST_VIEW, "", resources.getString(R.string.phy2)),
+                     DataPhyTable(SECOND_VIEW, resources.getString(R.string.tablephy2)),
+                     DataPhyTable(SECOND_VIEW, resources.getString(R.string.tablephy3)),
+                     DataPhyTable(SECOND_VIEW, resources.getString(R.string.tablephy4)),
                  )
              }
 
             1 -> {
-                arrayListOf(//2.Motion
-                    DataModel(FIRST_VIEW,"2.Motion",resources.getString(R.string.phy3)),
-                    imageData(THIRD_VIEW,R.drawable.speed),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy4)),
-                    imageData(THIRD_VIEW,R.drawable.velocity),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy5)),
-                    imageData(THIRD_VIEW,R.drawable.acceletation),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy6)),
-                    imageData(THIRD_VIEW,R.drawable.angular_velocity),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy7)),
-                    imageData(THIRD_VIEW,R.drawable.one_revolution_o),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy8)),
-                    imageData(THIRD_VIEW,R.drawable.force),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy9)),
+                arrayListOf(
+//2.Motion
+                    DataModel(FIRST_VIEW, "2.Motion", resources.getString(R.string.phy3)),
+                    imageData(THIRD_VIEW, R.drawable.speed),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy4)),
+                    imageData(THIRD_VIEW, R.drawable.velocity),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy5)),
+                    imageData(THIRD_VIEW, R.drawable.acceletation),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy6)),
+                    imageData(THIRD_VIEW, R.drawable.angular_velocity),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy7)),
+                    imageData(THIRD_VIEW, R.drawable.one_revolution_o),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy8)),
+                    imageData(THIRD_VIEW, R.drawable.force),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy9)),
                 )
             }
 
             2 -> {
-                arrayListOf(//3.Work,Energy and Power
-                    DataModel(FIRST_VIEW,"3.Work,Energy and Power",resources.getString(R.string.phy10)),
-                    DataPhyTable(SECOND_VIEW,resources.getString(R.string.tablephy5)),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy11)),
-                    imageData(THIRD_VIEW,R.drawable.kinetic_energy),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy12)),
+                arrayListOf(
+//3.Work,Energy and Power
+                    DataModel(
+                        FIRST_VIEW,
+                        "3.Work,Energy and Power",
+                        resources.getString(R.string.phy10)
+                    ),
+                    DataPhyTable(SECOND_VIEW, resources.getString(R.string.tablephy5)),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy11)),
+                    imageData(THIRD_VIEW, R.drawable.kinetic_energy),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy12)),
 
                     )
             }
             3 -> {
-                arrayListOf(//4.Gravitation
-                    DataModel(FIRST_VIEW,"4.Gravitation",resources.getString(R.string.phy13)),
-                    imageData(THIRD_VIEW,R.drawable.gravitation),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy14)),
-                    imageData(THIRD_VIEW,R.drawable.kepler_law),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy15)),
-                    imageData(THIRD_VIEW,R.drawable.period_of_revolution),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy16)),
-                    imageData(THIRD_VIEW,R.drawable.orbital_velocity),
+                arrayListOf(
+//4.Gravitation
+                    DataModel(FIRST_VIEW, "4.Gravitation", resources.getString(R.string.phy13)),
+                    imageData(THIRD_VIEW, R.drawable.gravitation),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy14)),
+                    imageData(THIRD_VIEW, R.drawable.kepler_law),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy15)),
+                    imageData(THIRD_VIEW, R.drawable.period_of_revolution),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy16)),
+                    imageData(THIRD_VIEW, R.drawable.orbital_velocity),
 
 
                     )
             }
             4 -> {
-                arrayListOf(//5.Pressure
-                    DataModel(FIRST_VIEW,"5.Pressure",resources.getString(R.string.phy17)),
-                    imageData(THIRD_VIEW,R.drawable.pressure_p),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy18)),
+                arrayListOf(
+//5.Pressure
+                    DataModel(FIRST_VIEW, "5.Pressure", resources.getString(R.string.phy17)),
+                    imageData(THIRD_VIEW, R.drawable.pressure_p),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy18)),
                 )
             }
             5 -> {
-                arrayListOf(//6.Floatation
-                    DataModel(FIRST_VIEW,"6.Floatation",resources.getString(R.string.phy19)),
-                    imageData(THIRD_VIEW,R.drawable.density),
-                    DataModel(FIRST_VIEW,"",resources.getString(R.string.phy20)),
+                arrayListOf(
+//6.Floatation
+                    DataModel(FIRST_VIEW, "6.Floatation", resources.getString(R.string.phy19)),
+                    imageData(THIRD_VIEW, R.drawable.density),
+                    DataModel(FIRST_VIEW, "", resources.getString(R.string.phy20)),
                 )
             }
             6 -> {
@@ -309,7 +437,29 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+
     }
+
+    private fun screenRecord(){
+
+        val screenName = "Physics Screen"
+
+        /*firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW){
+            param(FirebaseAnalytics.Param.SCREEN_NAME,screenName)
+            param(FirebaseAnalytics.Param.SCREEN_CLASS,"MainActivity")
+        }*/
+    }
+
+    private fun buttonClicked(){
+
+       /* firebaseAnalytics.logEvent("Clicked Event"){
+            param("button_one", "Clicked_one")
+
+        }*/
+    }
+
 
 
     
