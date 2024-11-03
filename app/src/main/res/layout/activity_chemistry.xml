@@ -9,10 +9,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chem_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/chem_adView"/>
+        android:layout_height="match_parent"/>
 
-    <com.google.android.gms.ads.AdView
+    <!--<com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/chem_adView"
         android:layout_width="wrap_content"
@@ -20,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_id">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/chem_admob_banner_id">
+    </com.google.android.gms.ads.AdView>-->
 
 </RelativeLayout>

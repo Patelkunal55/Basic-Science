@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:targetApi="31">
+        android:hardwareAccelerated="true"
+        tools:targetApi="35">
         <activity
             android:name=".Biology"
             android:exported="true">
@@ -28,6 +29,7 @@
         </activity>
         <activity
             android:name=".ChapterActivity"
+            android:hardwareAccelerated="true"
             android:exported="false">
 
         </activity>
@@ -45,13 +47,19 @@
 
         </activity>
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-8093216699203818~1873114718"/>
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <!-- Real AdMob app ID: ca-app-pub-8093216699203818~1873114718 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
+            android:value="true"/>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+            android:value="true"/>
     </application>
 
 </manifest>

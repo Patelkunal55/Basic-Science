@@ -33,9 +33,9 @@ class Biology : AppCompatActivity() {
 
         initView()
 
-        bannerAds()
+        //bannerAds()
 
-        interstitialAds()
+
 
 
     }
@@ -46,44 +46,16 @@ class Biology : AppCompatActivity() {
     }
 
 
-    private fun bannerAds(){
+   /* private fun bannerAds(){
         MobileAds.initialize(this)
         adView = findViewById(R.id.bio_adView)
         adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
-    }
+    }*/
 
 
-    private fun interstitialAds(){
-        MobileAds.initialize(this)
-        var adRequest = AdRequest.Builder().build()
 
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                //Log.d(TAG, adError?.toString())
-                mInterstitialAd = null
 
-            }
-
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                //Log.d(TAG, 'Ad was loaded.')
-                mInterstitialAd = interstitialAd
-                shows()
-            }
-        })
-    }
-
-    private fun shows(){
-
-        if (mInterstitialAd != null) {
-            mInterstitialAd?.show(this)
-
-        } else {
-            //Toast.makeText(this,TAG+ "Not showing Ads",Toast.LENGTH_SHORT).show()
-            //Log.d("TAG", "The interstitial ad wasn't ready yet.")
-
-        }
-    }
 
 
 
@@ -91,18 +63,18 @@ class Biology : AppCompatActivity() {
 
         //val no:Int = 1
         val number:Int = intent.getIntExtra("biology",0)
-        Toast.makeText(this,"Get Number $number",Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,"Get Number $number",Toast.LENGTH_SHORT).show()
 
         when(number){
 
             0 -> return arrayListOf(
-                DataBio(FIRST_VIEW,"Introduction of Biology",resources.getString(R.string.bio1)),
+                DataBio(FIRST_VIEW,"1. Introduction to Biology ",resources.getString(R.string.bio1)),
 
 
                 )
 
             1 -> return arrayListOf(
-                DataBio(FIRST_VIEW,"Classification of Organism",resources.getString(R.string.bio2)),
+                DataBio(FIRST_VIEW,"2. Classification of Organism",resources.getString(R.string.bio2)),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio3)),
 
                 )
@@ -128,24 +100,26 @@ class Biology : AppCompatActivity() {
 
                 )
 
-            4 -> return arrayListOf(//5.Sex Determination in Human
+            5 -> return arrayListOf(//5.Sex Determination in Human
                 DataBio(FIRST_VIEW,"5.Sex Determination in Human",resources.getString(R.string.bio10)),
                 DataBioModel(THIRD_VIEW,R.drawable.sex_determination_in_human),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio11)),
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table4)),
 
                 )
-            5 -> return arrayListOf(//6.Organic Evolution
+            6 -> return arrayListOf(//6.Organic Evolution
                 DataBio(FIRST_VIEW,"6.Organic Evolution",resources.getString(R.string.bio12)),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio8)),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio9)),
 
                 )
-            /*6 -> return arrayListOf(//Biology
+            7 -> return arrayListOf(//Biology
+                DataBio(FIRST_VIEW,"Biology",resources.getString(R.string.bio63))
 
 
-                )*/
-            7 -> return arrayListOf(//1.Classification of Plantae
+
+                )
+            8 -> return arrayListOf(//1.Classification of Plantae
                 DataBio(FIRST_VIEW,"1.Classification of Plantae",resources.getString(R.string.bio13)),
                 DataBioModel(THIRD_VIEW,R.drawable.plant_kingdoms),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio14)),
@@ -156,31 +130,31 @@ class Biology : AppCompatActivity() {
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio17)),
 
                 )
-            8 -> return arrayListOf(//2.Plant Morphology
+            10 -> return arrayListOf(//2.Plant Morphology
                 DataBio(FIRST_VIEW,"2.Plant Morphology",resources.getString(R.string.bio18)),
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table7)),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio19))
 
                 )
 
-            9 -> return arrayListOf(//3.Plant Tissue
+            11 -> return arrayListOf(//3.Plant Tissue
                 DataBio(FIRST_VIEW,"3.Plant Tissue",resources.getString(R.string.bio20)),
                 DataBioModel(THIRD_VIEW,R.drawable.plant_kingdoms),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio21)),
 
 
             )
-            10 -> return arrayListOf(//4.Photosynthesis
+            12 -> return arrayListOf(//4.Photosynthesis
                 DataBio(FIRST_VIEW,"4.Photosynthesis",resources.getString(R.string.bio22)),
                 DataBioModel(THIRD_VIEW,R.drawable.reaction),
 
 
         )
-            11 -> return arrayListOf(//5. Plant Hormones
+            13 -> return arrayListOf(//5. Plant Hormones
                 DataBio(FIRST_VIEW,"5. Plant Hormones",resources.getString(R.string.bio23)),
 
                 )
-            12 -> return arrayListOf(//6. Plant Diseases
+            15 -> return arrayListOf(//6. Plant Diseases
                 DataBio(FIRST_VIEW,"6. Plant Diseases",resources.getString(R.string.bio24)),
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table8)),
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table9)),
@@ -188,32 +162,32 @@ class Biology : AppCompatActivity() {
 
                 )
 
-            13 -> return arrayListOf(//7. Ecology
+            16 -> return arrayListOf(//7. Ecology
                 DataBio(FIRST_VIEW,"7. Ecology",resources.getString(R.string.bio25)),
 
                 )
-            14 -> return arrayListOf(//8. Nitrogen cycle
+            17 -> return arrayListOf(//8. Nitrogen cycle
             DataBio(FIRST_VIEW,"8. Nitrogen cycle",resources.getString(R.string.bio26)),
 
             )
-            15 -> return arrayListOf(//9. Pollution
+            18 -> return arrayListOf(//9. Pollution
             DataBio(FIRST_VIEW,"9. Pollution",resources.getString(R.string.bio27)),
 
             )
-            16 -> return arrayListOf(//ZOOLOGY
+            20 -> return arrayListOf(//ZOOLOGY
             DataBio(FIRST_VIEW,"ZOOLOGY",resources.getString(R.string.bio28)),
 
             )
 
-            17 -> return arrayListOf(//1. Classification of Animal Kingdom
+            21 -> return arrayListOf(//1. Classification of Animal Kingdom
                 DataBio(FIRST_VIEW,"1. Classification of Animal Kingdom",resources.getString(R.string.bio29)),
 
                 )
-            18 -> return arrayListOf(//2. Animal Tissue
+            22 -> return arrayListOf(//2. Animal Tissue
                 DataBio(FIRST_VIEW,"2.Animal Tissue",resources.getString(R.string.bio30)),
 
                 )
-            19 -> return arrayListOf(//3. Human Blood
+            23 -> return arrayListOf(//3. Human Blood
                 DataBio(FIRST_VIEW,"3.Human Blood",resources.getString(R.string.bio31)),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio32)),
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table10)),
@@ -221,7 +195,7 @@ class Biology : AppCompatActivity() {
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table11)),
 
                 )
-            20 -> return arrayListOf(//4. System of the Human Body
+            25 -> return arrayListOf(//4. System of the Human Body
                 DataBio(FIRST_VIEW,"4. System of the Human Body",resources.getString(R.string.bio34)),
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table12)),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio35)),
@@ -233,7 +207,7 @@ class Biology : AppCompatActivity() {
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio38)),
 
                 )
-            21 -> return arrayListOf(//5. Nutrients
+            26 -> return arrayListOf(//5. Nutrients
                 DataBio(FIRST_VIEW,"5. Nutrients",resources.getString(R.string.bio39)),
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table15)),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio40)),
@@ -243,22 +217,18 @@ class Biology : AppCompatActivity() {
                 DataBioTable(SECOND_VIEW,resources.getString(R.string.table18)),
 
                 )
-            22 -> return arrayListOf(//6. Human Diseases
+            27 -> return arrayListOf(//6. Human Diseases
                 DataBio(FIRST_VIEW,"6. Human Diseases",resources.getString(R.string.bio42)),
                 DataBio(FIRST_VIEW,"",resources.getString(R.string.bio43)),
 
                 )
 
-            22 -> return arrayListOf(//5. Plant Hormones
+            28 -> return arrayListOf(//5. Plant Hormones
                 DataBio(FIRST_VIEW,"5. Plant Hormones",resources.getString(R.string.bio23)),
 
                 )
 
-            22 -> return arrayListOf(//5. Plant Hormones
-                DataBio(FIRST_VIEW,"5. Plant Hormones",resources.getString(R.string.bio23)),
-                DataBio(FIRST_VIEW,"",resources.getString(R.string.bio32)),
 
-                )
 
 
 

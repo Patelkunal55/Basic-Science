@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/menu_toolbar"
             android:layout_width="match_parent"
@@ -21,13 +22,27 @@
             app:title="This is toolbar"
             tools:ignore="MissingConstraints" />
 
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/admob_banner_id">
+            <!--ads:adUnitId="@string/test_admob_banner_id" //test ads-->
+            <!--ads:adUnitId="@string/admob_banner_id"-->
+        </com.google.android.gms.ads.AdView>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:clipToPadding="false"
             android:padding="4dp"
             tools:listitem="@layout/example_item" />
+
+
+
     </LinearLayout>
 
 
@@ -35,8 +50,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/linear_layout"
+        android:layout_below="@+id/my_drawer_layout"
         android:gravity="center">
+
+
 
     </RelativeLayout>
 
@@ -51,4 +68,8 @@
 
 
 
+
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
+

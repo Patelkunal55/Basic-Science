@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.torque.patel.basicscience.databinding.FirstChemViewBinding
+import com.torque.patel.basicscience.databinding.NativeAdViewCheBinding
 import com.torque.patel.basicscience.databinding.SecondChemViewBinding
 import com.torque.patel.basicscience.databinding.ThirdChemViewBinding
 
@@ -13,6 +14,7 @@ class ChemViewAdapter(private val list:ArrayList<Any>,val onItemClickListners: O
         const val FIRST_VIEW = 1
         const val SECOND_VIEW = 2
         const val THIRD_VIEW = 3
+        const val AD_VIEW = 4
     }
     /*override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType){
@@ -48,6 +50,12 @@ class ChemViewAdapter(private val list:ArrayList<Any>,val onItemClickListners: O
                 val binding = ThirdChemViewBinding.inflate(inflater, parent, false)
                 ThirdChemViewHolder(binding)
             }
+
+            AD_VIEW -> {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = NativeAdViewCheBinding.inflate(inflater, parent, false)
+                Che_AdViewHolder(binding)
+            }
             else -> throw  IllegalArgumentException("Invalid view type")
         }
 
@@ -66,6 +74,11 @@ class ChemViewAdapter(private val list:ArrayList<Any>,val onItemClickListners: O
 
             is ThirdChemViewHolder -> {
                 val imageData = list[position] as DataCheModel
+                holder.bind(imageData)
+            }
+
+            is Che_AdViewHolder -> {
+                val imageData = list[position] as AD_ID_DATA
                 holder.bind(imageData)
             }
         }
@@ -92,6 +105,7 @@ class ChemViewAdapter(private val list:ArrayList<Any>,val onItemClickListners: O
             is DataChem -> FIRST_VIEW
             is DataChemTable -> SECOND_VIEW
             is DataCheModel -> THIRD_VIEW
+            is AD_ID_DATA-> AD_VIEW
             else -> throw IllegalArgumentException("Invalid data model type")
         }
     }

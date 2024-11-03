@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.torque.patel.basicscience.databinding.ItemView1Binding
 import com.torque.patel.basicscience.databinding.ItemView2Binding
 import com.torque.patel.basicscience.databinding.ItemView3Binding
+import com.torque.patel.basicscience.databinding.NativeAdViewPhysBinding
 
 class MultiViewAdapter(private val list:ArrayList<Any>):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -14,6 +15,7 @@ class MultiViewAdapter(private val list:ArrayList<Any>):
         const val FIRST_VIEW = 1
         const val SECOND_VIEW = 2
         const val THIRD_VIEW = 3
+        const val AD_VIEW = 4
     }
    /* override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType){
@@ -57,6 +59,13 @@ class MultiViewAdapter(private val list:ArrayList<Any>):
                 val binding = ItemView3Binding.inflate(inflater, parent, false)
                 ThirdViewHolder(binding)
             }
+
+            AD_VIEW -> {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = NativeAdViewPhysBinding.inflate(inflater, parent, false)
+                Phys_AdViewHolder(binding)
+            }
+
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
@@ -77,6 +86,11 @@ class MultiViewAdapter(private val list:ArrayList<Any>):
                 val imageData = list[position] as imageData
                 holder.bind(imageData)
             }
+
+            is Phys_AdViewHolder -> {
+                val imageData = list[position] as AD_ID_DATA
+                holder.bind(imageData)
+            }
         }
     }
 
@@ -90,6 +104,7 @@ class MultiViewAdapter(private val list:ArrayList<Any>):
             is DataModel -> FIRST_VIEW
             is DataPhyTable -> SECOND_VIEW
             is imageData -> THIRD_VIEW
+            is AD_ID_DATA -> AD_VIEW
             else -> throw IllegalArgumentException("Invalid data model type")
         }
     }

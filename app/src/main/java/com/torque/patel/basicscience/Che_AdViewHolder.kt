@@ -15,28 +15,16 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdOptions
 import com.google.android.gms.ads.nativead.NativeAdView
-import com.torque.patel.basicscience.databinding.SecondChap2Binding
+import com.torque.patel.basicscience.databinding.NativeAdViewCheBinding
 
-class SecondChapViewHolder(private val binding: SecondChap2Binding):RecyclerView.ViewHolder(binding.root) {
-    //private lateinit var adLoader: AdLoader
+class Che_AdViewHolder(private val binding: NativeAdViewCheBinding):RecyclerView.ViewHolder(binding.root) {
+    private lateinit var adLoader: AdLoader
+    fun bind(idData:AD_ID_DATA){
 
-
-    fun bind(dataChap: DataChap){
-        val frameLayout: FrameLayout = itemView.findViewById(R.id.small_templates_frame)
-
-
-        val nativeAdOptions = NativeAdOptions.Builder()
-            .setAdChoicesPlacement(NativeAdOptions.ADCHOICES_BOTTOM_RIGHT)
-            .build()
-
-        //var adLoader = AdLoader.Builder(itemView.context, "ca-app-pub-3940256099942544~3347511713")//this is test Id
-        var adLoader = AdLoader.Builder(itemView.context, "ca-app-pub-8093216699203818~1873114718")
-            .withNativeAdOptions(nativeAdOptions)
-            .build()
+        val frameLayout: FrameLayout = itemView.findViewById(R.id.che_small_templates_frame)
 
 
-        //adLoader = AdLoader.Builder(itemView.context,"ca-app-pub-3940256099942544/2247696110")//this is test Id
-        adLoader = AdLoader.Builder(itemView.context,"ca-app-pub-8093216699203818/6642529892")
+        adLoader = AdLoader.Builder(itemView.context,idData.id)
             .forNativeAd { ad: NativeAd ->
 
 
@@ -44,8 +32,6 @@ class SecondChapViewHolder(private val binding: SecondChap2Binding):RecyclerView
 
 
                 if (adLoader.isLoading) {
-
-
                     // The AdLoader is still loading ads.
                     // Expect more adLoaded or onAdFailedToLoad callbacks.
                 } else {
@@ -54,19 +40,16 @@ class SecondChapViewHolder(private val binding: SecondChap2Binding):RecyclerView
                     //val inflater = parent.applicationContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
                     //val adView = inflater.inflate(R.layout.ad_unified,null) as NativeAdView
+
+
                     val adView = LayoutInflater.from(itemView.context).inflate(R.layout.small_templates,null) as NativeAdView
 
                     //val adView = layoutInflater.inflate(R.layout.small_template,null) as NativeAdView
-
+                    populateNativeAdView(ad,adView)
                     frameLayout.removeAllViews()
                     frameLayout.addView(adView)
-                    populateNativeAdView(ad,adView)
-
-
 
                 }
-
-
 
 
 
@@ -133,14 +116,5 @@ class SecondChapViewHolder(private val binding: SecondChap2Binding):RecyclerView
 
 
         nativeAdView.setNativeAd(nativeAd)
-
-
-
-
-
-
     }
-
-
-
 }

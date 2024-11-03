@@ -10,7 +10,13 @@
     <string name="nav_close">Close</string>
 
     <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="test_admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="admob_banner_id">ca-app-pub-8093216699203818/8245310932</string>
+    <string name="chem_admob_banner_id">ca-app-pub-8093216699203818/4017375400</string>
+    <string name="bio_admob_banner_id">ca-app-pub-8093216699203818/4779669024</string>
+
+
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////
@@ -3044,16 +3050,14 @@ Lysosome is not found in Red blood corpuscles of mammal.<br/>
     </string><!--4.Genetics-->
     <string name="bio8">
 <![CDATA[
-<b>Dihybrid cross:</b> Mendal made a cross between two pure plant having in two pair of contransting character i.e. colour and shape of seed called dihybrid cross.<br/>
+<b>Dihybrid cross:</b> Mendal made a cross between two pure plant having in two pair of contrasting character i.e. colour and shape of seed called dihybrid cross.<br/>
 He made a cross between plant having round seed with yellow colour and wrinkled seed with green colour.<br/>
-
-
-
 ]]>
     </string>
+
     <string name="bio9">
 <![CDATA[
-1.	Law of paired unit:Mendal proposed that when two dissimilar unit factors are present in an individual only one is able to express. One that expresses itself is dominant unit factor while other which fail to express is recessive unit factor. For example tallness is dominant over dwarfness.<br/>
+1.	Law of paired unit: Mendal proposed that when two dissimilar unit factors are present in an individual only one is able to express. One that expresses itself is dominant unit factor while other which fail to express is recessive unit factor. For example tallness is dominant over dwarfness.<br/>
 2.	Law of dominance: Offspring of cross breed parent only show dominant characters in F1 generation.<br/>
 3.	Law of segregation: In F2 generation both the character which is governed by gene is separated.<br/>
 4.	Law of independent assortment: During dihybrid and tribhybrid cross two or three pair of characters are taken. These characters segregate separately without depending on other in F2 generation.<br/>
@@ -3081,7 +3085,60 @@ Human have 23 pair of chromosome which determine the sex of organism pair is sex
 ⦁	Reverse transcription was discovered by Temin & Baltimore.<br/>
 ⦁	Targeted drug delivery and gene therapy are made possible by the use of nanotechnology in health sector.<br/>
 ]]>
-    </string>
+</string>
+
+        <string name ="bio63">
+<![CDATA[
+Biology is the scientific study of life and living organisms. It encompasses a wide range of fields that study various aspects of living things,
+from the molecular level to entire ecosystems. Here are the key components and areas of focus in biology:<br/>
+<br/>
+<b>1. Cell Biology</b><br/>
+<b>Cells:</b> The basic unit of life. All organisms are composed of one or more cells.<br/>
+<b>Cell Structure and Function:</b> Understanding the various parts of a cell (such as the nucleus, mitochondria, and ribosomes) and their specific roles.<br/>
+<br/>
+<b>2. Genetics</b><br/>
+<b>DNA and Genes:</b> The molecules that carry genetic information. Genes are segments of DNA that code for proteins.<br/>
+<b>Heredity:</b> The process by which traits are passed from parents to offspring.<br/>
+<b>Genetic Variation:</b> Differences in DNA sequences among individuals, which contribute to diversity within a species.<br/>
+<br/>
+<b>3. Evolution</b><br/>
+<b>Natural Selection:</b> The process by which organisms better adapted to their environment tend to survive and produce more offspring.<br/>
+<b>Speciation:</b> The formation of new and distinct species in the course of evolution.<br/>
+<b>Phylogeny:</b> The evolutionary history and relationships among species.<br/>
+<br/>
+<b>4. Ecology</b><br/>
+<b>Ecosystems:</b> Communities of living organisms interacting with their physical environment.<br/>
+<b>Energy Flow and Nutrient Cycling:</b> The movement of energy and nutrients through ecosystems.<br/>
+<b>Population Dynamics:</b> The study of how populations of species change over time and space.<br/>
+<br/>
+<b>5. Physiology</b><br/>
+<b>Organ Systems:</b> Groups of organs that work together to perform specific functions (e.g., the digestive system, respiratory system).<br/>
+<b>Homeostasis:</b> The ability of an organism to maintain stable internal conditions despite changes in the external environment.<br/>
+<br/>
+<b>6. Anatomy</b><br/>
+<b>Structure of Organisms:</b> The physical structure of organisms, including humans, and their parts.<br/>
+<b>Comparative Anatomy:</b> The study of similarities and differences in the anatomy of different species.<br/>
+<br/>
+<b>7. Microbiology</b><br/>
+<b>Microorganisms:</b> Study of microscopic organisms such as bacteria, viruses, fungi, and protozoa.<br/>
+<b>Pathogens and Disease:</b> How microorganisms cause diseases and the body&apos;s defense mechanisms.<br/>
+<br/>
+<b>8. Biochemistry</b><br/>
+<b>Chemical Processes:</b> The study of chemical processes and substances that occur within living organisms.</b><br/>
+<b>Metabolism:</b> The set of life-sustaining chemical transformations within the cells.</b><br/>
+<br/>
+<b>9. Biotechnology</b><br/>
+<b>Genetic Engineering:</b> The manipulation of an organism&apos;s genes using biotechnology.<br/>
+<b>Applications:</b> Uses in medicine, agriculture, and industry, such as developing new drugs, genetically modified crops, and industrial enzymes.<br/>
+<br/>
+<b>Summary</b> <br/>
+Biology is a diverse and dynamic field that seeks to understand the structure, function, growth, origin, evolution, and distribution of living organisms. Through various sub disciplines, biologists aim to uncover the principles governing life processes and apply this knowledge to improve health, agriculture, and the environment.<br/>
+]]>
+        </string>
+
+
+
+
     <string name="bio10"><!--5.Sex Determination in Human-->
 <![CDATA[
 In human male sex chromosome is ‘XY’, where as in female sex chromosome is XX. During gamete formation in
@@ -3669,8 +3726,50 @@ sulphates of Magnesium and Potassium, Ammonia,</p>
 
     <string name="bio28"><!--ZOOLOGY -->
 <![CDATA[
-Zoology: Scientific study of the structure, form and distribution of animals.
-
+<p>Zoology is the branch of biology that focuses on the study of animals. It encompasses various aspects of animal life, including their anatomy, physiology, evolution, behavior, and ecology. Here are the key components and areas of focus in zoology:</p><br/>
+<br/>
+<b>1. Animal Classification (Taxonomy)</b><br/>
+<b>Taxonomy:</b> The science of classifying animals into groups based on similarities and differences in their physical and genetic characteristics.<br/>
+Hierarchical System: Kingdom, Phylum, Class, Order, Family, Genus, Species.<br/>
+<br/>
+<b>2. Anatomy and Physiology</b><br/>
+<b>Anatomy:</b> The study of the physical structure of animals.<br/>
+<b>Physiology:</b> The study of the functions and processes of various parts of animals, such as organs and tissues.<br/>
+<br/>
+<b>3. Developmental Biology</b><br/>
+<b>Embryology:</b> The study of the development of an animal from the fertilized egg to the mature form.<br/>
+<b>Metamorphosis:</b> The process of transformation from an immature form to an adult form in some animals, such as insects and amphibians.<br/>
+<br/>
+<b>4. Evolution and Genetics</b><br/>
+<b>Evolution:</b> The study of how animals have evolved over time through natural selection and genetic changes.<br/>
+<b>Genetics:</b> The study of genes, heredity, and variation in animals.<br/>
+<br/>
+<b>5. Ecology</b><br/>
+<b>Habitat:</b> The natural environment in which an animal lives.<br/>
+<b>Interactions:</b> How animals interact with each other and with their environment, including predator-prey relationships and symbiotic relationships.<br/>
+<br/>
+<b>6. Behavioral Zoology (Ethology)</b><br/>
+<b>Behavior:</b> The study of animal behavior in natural settings.<br/>
+<b>Social Structures:</b> Understanding how animals live in groups, including social hierarchies, mating systems, and communication.<br/>
+<br/>
+<b>7. Paleozoology</b><br/>
+<b>Fossil Records:</b> The study of ancient animals through fossils to understand the history of life on Earth.<br/>
+<b>Evolutionary History:</b> Tracing the lineage and changes in animal species over millions of years.<br/>
+<br/>
+<b>8. Marine Biology</b><br/>
+<b>Marine Animals:</b> The study of animals that live in ocean environments.<br/>
+<b>Adaptations:</b> How marine animals have adapted to their unique environments, including deep-sea and coastal regions.<br/>
+<br/>
+<b>9. Entomology</b><br/>
+<b>Insects:</b> The study of insects, which are the largest group of animals in terms of number of species.<br/>
+<b>Impact:</b> Understanding the ecological and economic impacts of insects, including pollination and pest control.<br/>
+<br/>
+<b>10. Conservation Biology</b><br/>
+<b>Biodiversity:</b> The study and preservation of animal species and their habitats.<br/>
+<b>Endangered Species:</b> Efforts to protect species that are at risk of extinction.<br/>
+<br/>
+<b>Summary</b><br/>
+Zoology is a broad and dynamic field that covers all aspects of animal life. It seeks to understand the diversity of the animal kingdom, the roles animals play in ecosystems, their evolutionary history, and their interactions with each other and their environments. Through various sub-disciplines, zoologists contribute to our knowledge of animal biology and work towards the conservation and protection of animal species and their habitats.
 ]]>
     </string>
 
@@ -4929,9 +5028,7 @@ Sarconoma: Cancerous growth in connective tissue, bones, cartilage and muscles i
 <![CDATA[]]>
     </string>
 
-    <string name="bio63">
-<![CDATA[]]>
-    </string>
+
 
     <string name="bio64">
 <![CDATA[]]>
@@ -9275,4 +9372,7 @@ table, th, td {
     </string-array>
 
 
+
+    <!-- <string name="bio63">This is a string with &quot;quotes&quot; and &lt;special&gt; characters.
+    </string> -->
 </resources>

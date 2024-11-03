@@ -14,6 +14,7 @@ class BioViewAdapter(private val list: ArrayList<Any>):
         const val FIRST_VIEW = 1
         const val SECOND_VIEW = 2
         const val THIRD_VIEW = 3
+        const val AD_VIEW = 4
 
     }
    /* override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

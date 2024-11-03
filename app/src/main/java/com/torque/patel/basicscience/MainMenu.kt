@@ -12,6 +12,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.initialization.InitializationStatus
 import com.google.android.material.navigation.NavigationView
 import com.torque.patel.basicscience.R.color.colorBlack
 import com.torque.patel.basicscience.R.color.colorWhite
@@ -19,6 +23,9 @@ import com.torque.patel.basicscience.R.color.colorWhite
 class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
+
+    lateinit var adView: AdView
+    lateinit var adRequest: AdRequest
 
     //private val dataItem = ArrayList<ExampleItem>()
     @SuppressLint("MissingInflatedId", "ResourceAsColor")
@@ -28,6 +35,8 @@ class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
 
 
         ToolBar()
+
+        BannerAds()
 
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
@@ -44,6 +53,24 @@ class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
 
 
     }
+
+
+    private fun BannerAds(){
+        MobileAds.initialize(this)
+
+        // on below line we are initializing
+        // our ad view with its id
+        adView = findViewById(R.id.adView)
+
+        // on below line we are
+        // initializing our ad request.
+        adRequest = AdRequest.Builder().build()
+
+        // on below line we are loading our
+        // ad view with the ad request
+        adView.loadAd(adRequest)
+    }
+
 
     private fun ToolBar(){
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.menu_toolbar)
@@ -72,18 +99,24 @@ class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
                 }
                 R.id.nav_physics -> {
                     // Handle click on item 2
-                    showToast("Physics")
+                    val intent = Intent(this, ChapterActivity::class.java)
+                    intent.putExtra("subject", 0)
+                    startActivity(intent)
                     true
                 }
 
                 R.id.nav_chemistry -> {
                     // Handle click on item 2
-                    showToast("Chemistry")
+                    val intent = Intent(this, ChapterActivity::class.java)
+                    intent.putExtra("subject", 1)
+                    startActivity(intent)
                     true
                 }
                 R.id.nav_biology -> {
                     // Handle click on item 2
-                    showToast("Biology")
+                    val intent = Intent(this, ChapterActivity::class.java)
+                    intent.putExtra("subject", 2)
+                    startActivity(intent)
                     true
                 }
 
@@ -115,7 +148,7 @@ class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
             ExampleItem(R.drawable.physics,"Physics"),
             ExampleItem(R.drawable.chemistry,"Chemistry"),
             ExampleItem(R.drawable.biology,"Biology"),
-            ExampleItem(R.drawable.ic_satisfied,"Question Quiz"),
+           // ExampleItem(R.drawable.ic_satisfied,"Question Quiz"),
         )
 
     }

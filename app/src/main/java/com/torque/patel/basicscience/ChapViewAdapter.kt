@@ -1,14 +1,14 @@
 package com.torque.patel.basicscience
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.torque.patel.basicscience.databinding.FirstChap1Binding
-import com.torque.patel.basicscience.databinding.ImageViewLayoutBinding
 import com.torque.patel.basicscience.databinding.SecondChap2Binding
 
 class ChapViewAdapter(private val list:ArrayList<DataChap>, private val itemClickListener: OnItemClickListner):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-
+private lateinit var context: Context
 
 
 
