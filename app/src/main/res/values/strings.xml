@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools"  >
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">General Science Basic</string>
     <string name="navigatin_drawer_open">open navigation drawer</string>
     <string name="navigatin_drawer_close">close navigation drawer</string>
@@ -26,10 +26,7 @@
 
     <!--Biology-->
     <string name="bio_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
-    <!--<string name="bio_admob_adunit_id">"ca-app-pub-8093216699203818/2833873200"</string>-->
-
-
-
+    <!--<string name="bio_admob_adunit_id">"ca-app-pub-8093216699203818/5369403488"</string>-->
 
 
     <!-- to toggle the open close button of the navigation drawer -->
@@ -42,8 +39,6 @@
 
     <string name="chem_admob_banner_id">ca-app-pub-8093216699203818/4017375400</string>
     <string name="bio_admob_banner_id">ca-app-pub-8093216699203818/4779669024</string>
-
-
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////
@@ -287,7 +282,7 @@ Higher the vapour pressure of a particular liquid lesser will be the magnitude o
 ]]>
     </string>
     <string name="che7"><!--2.Atomic Structure-->
-<![CDATA[
+        <![CDATA[
 Actual mass of 1 atom of an element = atomic mass in amu × 1.66 × 10<sup>-24</sup> g<br/>
 <b>Molecular mass:</b> The molecular mass of a substance is a number which states that how many times mass one molecules of a substance is heavier in comparison to 1/12th mass of one atom of Carbon – 12<br/>
 
@@ -405,7 +400,7 @@ These electromagnetic radiations are expressed in terms of certain characteristi
 ]]>
     </string>
 
-    <string name = "che11A">
+    <string name="che11A">
             <![CDATA[
             <b>Zeeman effect :</b> When spectral lines obtained from atomic spectra is placed in a magnetic field, they are splitted into number of fine lines, this is called Zeeman effect. <br/>
 <b>Stark effect :</b> When spectral lines obtained from atomic spectra is placed in electric field, they are splitted into number of fine lines this is called Stark effect. <br/>
@@ -441,7 +436,7 @@ Aufbau is a German word meaning building up. This principle state that electrons
     </string>
 
     <string name="che16"><!--3.Periodic classificatin of Element-->
-<![CDATA[
+        <![CDATA[
 Father of periodic table—Mendeleev. <br/>
 The arrangement of the known elements in certain groups in such a way so that the elements with similar properties are grouped together is known as classification of elements. <br/>
 <b>Genesis of periodic classification :</b><br/>
@@ -530,7 +525,7 @@ If hydration energy is greater than Lattice energy, then compound is soluble in 
         ]]>
     </string>
     <string name="che21"><!--4.Chemical Bonding-->
-<![CDATA[
+        <![CDATA[
 The force that holds together the different atoms in a molecule is called chemical bond. There are many types of chemical bond. <br/>
 <b>1. Ionic bond or (Electrovalent bond) :</b> A bond formed by the complete transfer of one or more electrons from one atom to other atom is called ionic bond. Example— <br/>
 (a) Formation of NaCl : <br/>
@@ -616,7 +611,7 @@ Due to intermolecular hydrogen bonding between alcohol and water. alcohol is sol
 ]]>
     </string>
     <string name="che31"><!--5.Oxidation & Reduction-->
-<![CDATA[
+        <![CDATA[
 <b>Oxidation (old concept) :</b> Oxidation is a process which involves either of the following— <br/>
 1. addition of oxygen 2. removal of hydrogen <br/>
 3.	addition of electro negative element or group <br/>
@@ -730,7 +725,7 @@ X=0 <br/>
     </string>
     <!--////////////////////////////////////////////////Solution////////////////////////////////////////////////////-->
     <string name="che47"><!--Solution-->
-<![CDATA[
+        <![CDATA[
 <p>A homogeneous mixture of two or more pure non-reacting substances whose composition can be varied within certain limits is called solution. When solution is composed of only two components, it is called binary solution. For example solution of NaCl in water. Similarly solution containing three components is called ternary solution For example a solution of NaCl and KCI in water.</p> <br/>
 In binary solution, there are two components— <br/>
 1. Solute and 2. Solvent <br/>
@@ -805,7 +800,7 @@ The solubility of the substance increase continuously with increase in temperatu
 
     <!--///////////////////////////////////////////////Acid,Base and Salt/////////////////////////////////////-->
     <string name="che52"><!--7.Acid,Base and Salt -->
-<![CDATA[
+        <![CDATA[
 <b>Acid</b> <br/>
 An acid is a substance which <br/>
 1.	is sour in taste <br/>
@@ -941,7 +936,7 @@ Uses of some important salts :
 
     <!--///////////////////////////////////////////Behaviour of Gases//////////////////////////////////////////-->
     <string name="che57"><!-- Behaviour of Gases -->
-<![CDATA[
+        <![CDATA[
 <b>1.Boyle law :</b> At constant temperature, the volume of a definite mass of a gas is inversely proportional to pressure.<br/>
 V ∝ 1/p (at constant T)
 ]]>
@@ -1176,7 +1171,7 @@ To indicate the quality of gasoline (petrol), a method of gradation has been int
 ]]>
     </string>
 
-       <string name="che78" formatted="false">
+    <string name="che78" formatted="false">
 <![CDATA[
 <b>Antiknock Compounds :</b> To reduce the knocking property or to improve the octane number of a fuel certain chemicals are added it. These are called antiknock compounds. TEL (Tetra Ethyl Lead) is the best antiknock compound. <br/>
 <b>Cetane Number :</b> Cetane number of a diesel oil is the percentage of cetane (hexadecane) by volume in a mixture of cetane and a—methyl naphthalene. Hexa decane has been assigned cetane number 100 while a—methyl nephthalene is assigned zero cetane number. <br/>
@@ -1321,7 +1316,6 @@ Plaster of paris is obtained by heating gypsum at 120<sup>o</sup>C<br/>
 
 ]]>
     </string>
-
 
 
     <string name="che89">
@@ -2962,7 +2956,7 @@ The term biology was first coined by Lamarck and Treviranus in the year 1801. Bi
 ]]>
     </string><!--1.Introduction of Biology-->
     <string name="bio2"><!-- 2.Classification of Organism-->
-<![CDATA[
+        <![CDATA[
 •There are millions of organisms. It is impossible to study each individual separately. Classification means to categories organism into different groups. Study of an individual of a group us the idea of rest of the member of that group.<br/>
 •Linnaeus divide all organism into two kingdoms – Panate and Animalia in his book “Systema Nature”. The foundation of modern classification system was laid in the line of classification system started by Linnaeus. Therefore Linnaeus is called ‘Father of Taxonomy’. Due to disputed position of organism like bacteria, virus, fungi and euglena, there is a need of reconsideration of system of classification.<br/>
 •The book ‘Genera plantarium’ was written by Benthem and Hooker.<br/>
@@ -2987,7 +2981,7 @@ Carlos Linnus is the father of taxonomy.<br/>
 ]]>
     </string><!--Hello-->
     <string name="bio4"><!-- 3.Study of Cell-Cytology-->
-<![CDATA[
+        <![CDATA[
 •Study of cell is called cytology.<br/>
 •<b>Cell:</b> Cell is the basic structural and functional unit of life.<br/>
 •The word ‘cell’ was first coined by British scientist Robert Hook in the year 1665.<br/>
@@ -3061,7 +3055,7 @@ Lysosome is not found in Red blood corpuscles of mammal.<br/>
 
     </string>
     <string name="bio7"><!--4.Genetics-->
-<![CDATA[
+        <![CDATA[
 ⦁	Transmission of character from one generation to next generation is called heredity.<br/>
 ⦁	The process of transfer of hereditary character from generation to generation is called genetics.<br/>
 ⦁	The name genetics was first coined by W.Wattson in 1905.<br/>
@@ -3114,7 +3108,7 @@ Human have 23 pair of chromosome which determine the sex of organism pair is sex
 ]]>
 </string>
 
-        <string name ="bio63">
+    <string name="bio63">
 <![CDATA[
 Biology is the scientific study of life and living organisms. It encompasses a wide range of fields that study various aspects of living things,
 from the molecular level to entire ecosystems. Here are the key components and areas of focus in biology:<br/>
@@ -3164,10 +3158,8 @@ Biology is a diverse and dynamic field that seeks to understand the structure, f
         </string>
 
 
-
-
     <string name="bio10"><!--5.Sex Determination in Human-->
-<![CDATA[
+        <![CDATA[
 In human male sex chromosome is ‘XY’, where as in female sex chromosome is XX. During gamete formation in
 male half of the sperm contain ‘X’ chromosome while other half contain ‘Y’ Chromosome.
 In female all gametes contain only one type of chromosome that is ‘X’. Thus when a male gamete i.e.
@@ -3196,21 +3188,21 @@ In female when extra X chromosome is present instead of XX they show normal deve
 ]]>
     </string>
     <string name="bio12"><!--6.Organic Evolution-->
-<![CDATA[
+        <![CDATA[
 More and more creation of organism by gradual changes from low categories animal to higher animal is called organic evolution.  There are several evidence regarding organic evolution.<br/>
 <b>•Homologous organ:</b> Organ which are seen different due to use in its function but internal structure and embryonic development are similar. Ex- Flipper of whale, feather of bat, forelimb of horse, Paw of cat, and hands of human.<br/>
-<b>•Analogous organ:</b> Organ which looks similar due to be used in similar function but their internal structure and embryonic development are different. Ex- Feather of butterfly, bats and birds all looks similar but their internal structure and origin are different.
-<b>•Vestigial organ:</b> These are organs which appear functionless in an organism but functional in their ancestor. For example vermiform appendix of large intestine functional in their ancestor. For example vermiform appendix of large intestine and nictitating membrane of human. Vermiform appendix is functional in herbivorous mammal even now.
-<b>•Fossils –</b> Fossils are the remains of ancient plant or animal which provide evidences for evolution. Example – Archaeopteryx.
-<b>•Archaeopteryx:</b> It is a fossils look like bird but bear a number of features found in reptiles. So, it is a connecting link between aves and reptile.
-<b>Theories of evolution</b>
-<b>1.Carolus Linnaeus (1707-1778)</b> contribution to classification provide an evolutionary relationship among the organism. He was also supported an idea that no species ins new. Each and every species originates from some pre-existing species. He wrote  ‘species plantarum’ and proposed binomial system of nomenclature.
-<b>Jean Baptist Lamarck(1744-1829)</b> tried to explain the evolutionary process in his book Philosophic zoologique. The theory proposed by Lamark is known as theory of inheritance of acquired characters. According to this theory use and disuse of an organ lead to acquiring change in the features of that organ. These changes are also inherited to offspring. The favourable changes after long period of time result in evolution of new specie. But Lamarckism was very strongly criticized by August Weismann.
-<b>Charles Robert Darwin (1809-1882)</b> explain th evolutionary principle in his book’The origin of species’. The theory proposed by him is popularly known as ‘Theory of natural selection’ or Darwinism. Darwin explained that despite having the enormous potential of fertility, the population of organism remains within a limit. It is due to struggle between members o same species and different species for food, space and mate. Struggle eliminates the unfit individual. The fit organism possess some variations which are favourable and they can leave the progeny to give rise to origin of new species with progress in genetics, the sources of variation were explained and Darwin’s theory was modified. Now the most excepted theory of evolution is Modern synthetic theory was modified. Now the most exceptedtheory of evolution is Modern synthetic theory, in which origin of species is based on the interaction of genetic variation and natural selection.
-•Among Permian, Triassic, Cretaceous and Jurassic geological era cretaceous is the newest one.
-•The book which contains information about plant is called red data book.
-•Recapitulation theory was proposed by – Erunst Haeckel
-•The basic unit of biosystematics is genotype.
+<b>•Analogous organ:</b> Organ which looks similar due to be used in similar function but their internal structure and embryonic development are different. Ex- Feather of butterfly, bats and birds all looks similar but their internal structure and origin are different.<br/>
+<b>•Vestigial organ:</b> These are organs which appear functionless in an organism but functional in their ancestor. For example vermiform appendix of large intestine functional in their ancestor. For example vermiform appendix of large intestine and nictitating membrane of human. Vermiform appendix is functional in herbivorous mammal even now.<br/>
+<b>•Fossils –</b> Fossils are the remains of ancient plant or animal which provide evidences for evolution. Example – Archaeopteryx.<br/>
+<b>•Archaeopteryx:</b> It is a fossils look like bird but bear a number of features found in reptiles. So, it is a connecting link between aves and reptile.<br/>
+<b>Theories of evolution</b><br/>
+<b>1.Carolus Linnaeus (1707-1778)</b> contribution to classification provide an evolutionary relationship among the organism. He was also supported an idea that no species ins new. Each and every species originates from some pre-existing species. He wrote  ‘species plantarum’ and proposed binomial system of nomenclature.<br/>
+<b>Jean Baptist Lamarck(1744-1829)</b> tried to explain the evolutionary process in his book Philosophic zoologique. The theory proposed by Lamark is known as theory of inheritance of acquired characters. According to this theory use and disuse of an organ lead to acquiring change in the features of that organ. These changes are also inherited to offspring. The favourable changes after long period of time result in evolution of new specie. But Lamarckism was very strongly criticized by August Weismann.<br/>
+<b>Charles Robert Darwin (1809-1882)</b> explain th evolutionary principle in his book’The origin of species’. The theory proposed by him is popularly known as ‘Theory of natural selection’ or Darwinism. Darwin explained that despite having the enormous potential of fertility, the population of organism remains within a limit. It is due to struggle between members o same species and different species for food, space and mate. Struggle eliminates the unfit individual. The fit organism possess some variations which are favourable and they can leave the progeny to give rise to origin of new species with progress in genetics, the sources of variation were explained and Darwin’s theory was modified. Now the most excepted theory of evolution is Modern synthetic theory was modified. Now the most exceptedtheory of evolution is Modern synthetic theory, in which origin of species is based on the interaction of genetic variation and natural selection.<br/>
+•Among Permian, Triassic, Cretaceous and Jurassic geological era cretaceous is the newest one.<br/>
+•The book which contains information about plant is called red data book.<br/>
+•Recapitulation theory was proposed by – Erunst Haeckel<br/>
+•The basic unit of biosystematics is genotype.<br/>
 ]]>
     </string><!--6.Organic Evolution-->
     <string name="bio13">
@@ -3365,7 +3357,7 @@ On the  basis of shape, bacteria is of different types:<br/>
 ]]>
     </string>
     <string name="bio18"><!--2.Plant Morphology-->
-<![CDATA[
+        <![CDATA[
 <b>Morphology:</b> The study of forms and features of different parts of plants like roots, stems, leaves, flowers, fruits etc is called Morphology.<br/>
 <b>Root</b><br/>
 Root is the descending part of the plant which develops from radical.<br/>
@@ -3434,7 +3426,7 @@ Some fruits and their edible parts<br/>
     </string>
 
     <string name="bio20"><!--3.Plant Tissue-->
-<![CDATA[
+        <![CDATA[
 <b>Tissue:</b>The group of cells of similar origin, structure and functions is called tissue.<br/>
 <br/>
 <b>Types of Plant Tissue<b>
@@ -3528,7 +3520,7 @@ It is also known as Calvin Benson cycle.</p>
     </string><!--4.Photosynthesis-->
 
     <string name="bio23"><!--5. Plant Hormones-->
-<![CDATA[
+        <![CDATA[
 <p>Following five hormones are found in plants - </p>
 <p></p>
 <p><b>1. Auxins:</b> Auxins was discovered by Darwin in the year 1880. This is the hormone which controls the growth of plants.
@@ -3585,7 +3577,7 @@ The concept of tissue culture was introduced by Haberlandt.
     </string><!--5. Plant Hormones-->
 
     <string name="bio24"><!--6. Plant Diseases-->
-<![CDATA[
+        <![CDATA[
 <p><b>1. Viral Diseases:</b> (a) Mosaic disease of tobacco: In this disease leaves get shrinked and become small.
 The chlorophyll of leaves get destroyed. The factor of this disease is Tobacco Mosaic Virus (TMV).<br/>
 Control - Affected plants should be burnt.<br/>
@@ -3671,7 +3663,7 @@ and Enzuina Titriki Nematode. In this disease lower parts of the leaves are fade
 ]]>--> </string><!--7. Ecology-->
 
     <string name="bio26"><!--8. Nitrogen cycle -->
-<![CDATA[
+        <![CDATA[
 <p>Nitrogen fixation is a process in which free atmospheric nitrogen is
 converted by living organism into nitrogenous compound that can be used by plant. </p>
 <p><b>Ammonification:</b> Formation of ammonia from organic compound like proteins and nucleic acid by micro organism.
@@ -3685,7 +3677,7 @@ converted by living organism into nitrogenous compound that can be used by plant
     </string><!--8. Nitrogen cycle -->
 
     <string name="bio27"><!--9. Pollution -->
-<![CDATA[
+        <![CDATA[
 <p>Unwanted changes in the chemical and physical features of air, water and land (environment) that are dangerous to human and other organisms, their life conditions, industrial process and cultural achievements are called pollution.
 The types of pollution are mainly -1. Air pollution, 2. Water pollution, 3. Sound pollution, 4. Soil pollution, 5. Nuclear pollution.
 </p>
@@ -3752,7 +3744,7 @@ sulphates of Magnesium and Potassium, Ammonia,</p>
     </string><!--9. Pollution -->
 
     <string name="bio28"><!--ZOOLOGY -->
-<![CDATA[
+        <![CDATA[
 <p>Zoology is the branch of biology that focuses on the study of animals. It encompasses various aspects of animal life, including their anatomy, physiology, evolution, behavior, and ecology. Here are the key components and areas of focus in zoology:</p><br/>
 <br/>
 <b>1. Animal Classification (Taxonomy)</b><br/>
@@ -3800,7 +3792,7 @@ Zoology is a broad and dynamic field that covers all aspects of animal life. It 
 ]]>
     </string>
 
-    <string name="bio29" >
+    <string name="bio29">
 <![CDATA[
 <p>Animals kingdom of the world is divided into two sub-kingdoms:<br/>
 1. Unicellular animal<br/>
@@ -3991,7 +3983,7 @@ Excretion in hemichordata takes place by glomerulus.<br/>
     </string><!--1. Classification of Animal Kingdom -->
 
     <string name="bio30"><!--2. Animal Tissue -->
-<![CDATA[
+        <![CDATA[
 <p>The animal tissues can be divided into following categories-
 1. Epithelial Tissue 2. Connective Tissue 3. Muscular Tissue 4. Nervous Tissue
 </p>
@@ -4036,7 +4028,7 @@ Nervous tissue controls all the voluntary and involuntary activities of the body
 ]]>
     </string>
 
-    <string name="bio31" formatted="false" >
+    <string name="bio31" formatted="false">
 <![CDATA[
 
 
@@ -4140,7 +4132,7 @@ Therefore, with the four groups of blood division of antibody is as under-
 
 ]]></string>
 
-    <string name="bio33" >
+    <string name="bio33">
 <![CDATA[
 
 <p><b>Blood Transfusion:</b> Antigen &apos;A&apos; and antibody &apos;a&apos;, Antigen &apos;B&apos; and antibody &apos;b&apos; cannot live together.
@@ -4172,7 +4164,7 @@ The possible blood group of the child on the basis of blood group of mother and 
     </string>
 
     <string name="bio34"><!--4. System of the Human Body -->
-<![CDATA[
+        <![CDATA[
 <p><b>(a) Digestive System</b><br/>
 The complete process of nutritioin is divided into five stages:<br/>
 1. Ingestion  2.Digestion 3.Absorption<br/>
@@ -4238,7 +4230,7 @@ In a healthy people approximately 2 litres of intestinal juice secretes every da
 ]]>
     </string>
 
-    <string name="bio35" >
+    <string name="bio35">
 <![CDATA[
 <b>The main organs participating in digestion:</b>
 <p><b>Liver:</b> This is the largest gland of the human body. Its weight is approximately 1.5-2 kilogram.</p>
@@ -4754,7 +4746,7 @@ Cyanide poisoning causes death in second due to breaking down the electron trans
     </string>
 
     <string name="bio39" formatted="false"><!--5. Nutrients -->
-<![CDATA[
+        <![CDATA[
 <p>To maintain life organisms performs some basic function is called nutrition. Nutrition is one of
 the basic function of life in which intake of food, digestion, absorption, assimilation and egestion
 of undigested foods are included.
@@ -4907,7 +4899,7 @@ Due to the excessiveness of fat the body gets fatty, heart disease takes place a
     </string>
 
     <string name="bio42" tools:ignore="StringEscaping"><!--6. Human Diseases -->
-<![CDATA[
+        <![CDATA[
 
 <p>Diseases caused by Protozoa:<br/>
 Malignant malaria is pernicious malaria, caused by plasmodium falciparum.<br/>
@@ -4923,7 +4915,7 @@ Diseases caused by Bacteria:
 ]]>
     </string><!--6. Human Diseases -->
 
-    <string name="bio43" >
+    <string name="bio43">
 <![CDATA[<p><b> Medical Instrument</b><br/>
 Pacemaker: It is a small device that is placed in the chest to control abnormal heart beat.<br/>
 Computed Tomography Scan (CT Scan): Used to investigate abnormal functioning of the body.<br/>
@@ -5056,12 +5048,11 @@ Sarconoma: Cancerous growth in connective tissue, bones, cartilage and muscles i
     </string>
 
 
-
     <string name="bio64">
 <![CDATA[]]>
     </string>
 
-<!-- Table
+    <!-- Table
 
  ////////////////////////////////////////////////// Biology Table section /////////////////////////////////////////////////////////////////////////////////
 
@@ -5632,7 +5623,7 @@ table, th, td {
     </string>
 
 
-<string name="table10">
+    <string name="table10">
 <![CDATA[
 <style>
 table, th, td {
@@ -5678,7 +5669,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table11">
+    <string name="table11">
 <![CDATA[
 <style>
 table, th, td {
@@ -5749,7 +5740,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table12">
+    <string name="table12">
 <![CDATA[
 <style>
 table, th, td {
@@ -5862,7 +5853,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table13">
+    <string name="table13">
 <![CDATA[
 <style>
 table, th, td {
@@ -5928,7 +5919,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table14" formatted="false">
+    <string name="table14" formatted="false">
 <![CDATA[
 <style>
 table, th, td {
@@ -5962,7 +5953,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table15">
+    <string name="table15">
 <![CDATA[
 <style>
 table, th, td {
@@ -6068,7 +6059,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table16">
+    <string name="table16">
 <![CDATA[
 <style>
 table, th, td {
@@ -6150,7 +6141,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table17">
+    <string name="table17">
 <![CDATA[
 <style>
 table, th, td {
@@ -6296,7 +6287,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table18">
+    <string name="table18">
 <![CDATA[
 <style>
 table, th, td {
@@ -6336,7 +6327,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table19">
+    <string name="table19">
 <![CDATA[
 <style>
 table, th, td {
@@ -6400,7 +6391,7 @@ table, th, td {
 ]]>
     </string>
 
-<string name="table20">
+    <string name="table20">
 <![CDATA[
 <style>
 table, th, td {
@@ -6529,7 +6520,6 @@ table, th, td {
     </string>
 
 
-
     <string name="table23">
 <![CDATA[
 
@@ -6643,7 +6633,6 @@ table, th, td {
 </table>
 ]]>
     </string>
-
 
 
     <string name="table24">
@@ -7562,7 +7551,7 @@ table, th, td {
 ]]>
     </string>
 
-<!--///////////////////////Chemistry Section//////////////////////////////////////////////////////////-->
+    <!--///////////////////////Chemistry Section//////////////////////////////////////////////////////////-->
 
     <string name="tableche1">
 <![CDATA[
@@ -8396,8 +8385,7 @@ table, th, td {
         </string>
 
 
-
-        <string name="tableche14" formatted="false">
+    <string name="tableche14" formatted="false">
 <![CDATA[
 <style>
 table, th, td {
@@ -8499,53 +8487,42 @@ table, th, td {
 </table>
 ]]>
     </string>
-        <string name="tableche15" formatted="false">
+    <string name="tableche15" formatted="false">
 <![CDATA[
 
 ]]>
     </string>
-        <string name="tableche16">
+    <string name="tableche16">
 <![CDATA[
 
 ]]>
     </string>
-        <string name="tableche17">
+    <string name="tableche17">
 <![CDATA[
 
 ]]>
     </string>
-        <string name="tableche18">
-<![CDATA[
-
-]]>
-    </string>
-
-        <string name="tableche19">
-<![CDATA[
-
-]]>
-    </string>
-        <string name="tableche20">
-<![CDATA[
-
-]]>
-    </string>
-        <string name="tableche21">
+    <string name="tableche18">
 <![CDATA[
 
 ]]>
     </string>
 
+    <string name="tableche19">
+<![CDATA[
 
+]]>
+    </string>
+    <string name="tableche20">
+<![CDATA[
 
+]]>
+    </string>
+    <string name="tableche21">
+<![CDATA[
 
-
-
-
-
-
-
-
+]]>
+    </string>
 
 
     <string name="total_wrong">Total Wrong:</string>
@@ -9397,7 +9374,6 @@ table, th, td {
         <item>C.F7</item>
         <item>B.It applies the Italic formatting to the selected text</item>
     </string-array>
-
 
 
     <!-- <string name="bio63">This is a string with &quot;quotes&quot; and &lt;special&gt; characters.

@@ -15,35 +15,24 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdOptions
 import com.google.android.gms.ads.nativead.NativeAdView
-import com.torque.patel.basicscience.databinding.NativeAdViewCheBinding
+import com.torque.patel.basicscience.databinding.NativeAdViewBioBinding
+import java.lang.annotation.Native
 
-class Che_AdViewHolder(private val binding: NativeAdViewCheBinding):RecyclerView.ViewHolder(binding.root) {
+class Bio_AdViewHolder(private val binding: NativeAdViewBioBinding):RecyclerView.ViewHolder(binding.root) {
     private lateinit var adLoader: AdLoader
 
 
-    fun bind(idData:AD_ID_DATA){
 
-        val frameLayout: FrameLayout = itemView.findViewById(R.id.che_small_templates_frame)
+    fun bind(idData:AD_ID_DATA){
+        val frameLayout: FrameLayout = itemView.findViewById(R.id.bio_small_templates_frame)
 
 
         adLoader = AdLoader.Builder(itemView.context,idData.id)
             .forNativeAd { ad: NativeAd ->
 
-
-
-
-
                 if (adLoader.isLoading) {
-                    // The AdLoader is still loading ads.
-                    // Expect more adLoaded or onAdFailedToLoad callbacks.
-                } else {
-                    // The AdLoader has finished loading ads.
 
-                    //val inflater = parent.applicationContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-
-                    //val adView = inflater.inflate(R.layout.ad_unified,null) as NativeAdView
-
-
+                }else {
                     val adView = LayoutInflater.from(itemView.context).inflate(R.layout.small_templates,null) as NativeAdView
 
                     //val adView = layoutInflater.inflate(R.layout.small_template,null) as NativeAdView
@@ -54,8 +43,8 @@ class Che_AdViewHolder(private val binding: NativeAdViewCheBinding):RecyclerView
                 }
 
 
-
             }
+
             .withAdListener(object : AdListener(){
                 override fun onAdFailedToLoad(p0: LoadAdError) {
 
@@ -67,14 +56,8 @@ class Che_AdViewHolder(private val binding: NativeAdViewCheBinding):RecyclerView
 
             .build()
 
-
         adLoader.loadAds(AdRequest.Builder().build(),3)
-
-
-
-
     }
-
 
     private fun populateNativeAdView(nativeAd: NativeAd, nativeAdView: NativeAdView) {
         val adHeadline = nativeAdView.findViewById<TextView>(R.id.primary)
@@ -119,4 +102,6 @@ class Che_AdViewHolder(private val binding: NativeAdViewCheBinding):RecyclerView
 
         nativeAdView.setNativeAd(nativeAd)
     }
+
+
 }

@@ -74,6 +74,7 @@ dependencies {
     //implementation 'com.timqi.sectorprogressview:library:2.0.1'
 
     implementation 'com.github.jakob-grabner:Circle-Progress-View:1.4'
+    implementation 'androidx.activity:activity:1.9.3'
 
 
     testImplementation 'junit:junit:4.13.2'

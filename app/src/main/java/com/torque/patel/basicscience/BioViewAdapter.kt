@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.torque.patel.basicscience.databinding.FirstBioViewBinding
+import com.torque.patel.basicscience.databinding.NativeAdViewBioBinding
 import com.torque.patel.basicscience.databinding.SecondBioViewBinding
 import com.torque.patel.basicscience.databinding.ThirdBioViewBinding
 
@@ -54,6 +55,13 @@ class BioViewAdapter(private val list: ArrayList<Any>):
                 val binding = ThirdBioViewBinding.inflate(inflater, parent, false)
                 ThirdBioViewHolder(binding)
             }
+
+            AD_VIEW -> {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = NativeAdViewBioBinding.inflate(inflater, parent, false)
+                Bio_AdViewHolder(binding)
+            }
+
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
@@ -74,6 +82,11 @@ class BioViewAdapter(private val list: ArrayList<Any>):
                 val imageData = list[position] as DataBioModel
                 holder.bind(imageData)
             }
+
+            is Bio_AdViewHolder -> {
+                val imageData = list[position] as AD_ID_DATA
+                holder.bind(imageData)
+            }
         }
     }
 
@@ -86,6 +99,7 @@ class BioViewAdapter(private val list: ArrayList<Any>):
             is DataBio -> FIRST_VIEW
             is DataBioTable -> SECOND_VIEW
             is DataBioModel -> THIRD_VIEW
+            is AD_ID_DATA -> AD_VIEW
             else -> throw IllegalArgumentException("Invalid data model type")
         }
     }
