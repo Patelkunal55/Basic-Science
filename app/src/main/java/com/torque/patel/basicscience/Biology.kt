@@ -2,19 +2,14 @@ package com.torque.patel.basicscience
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.torque.patel.basicscience.BioViewAdapter.Companion.FIRST_VIEW
 import com.torque.patel.basicscience.BioViewAdapter.Companion.SECOND_VIEW
 import com.torque.patel.basicscience.BioViewAdapter.Companion.THIRD_VIEW
 import com.torque.patel.basicscience.databinding.ActivityBiologyBinding
-import com.torque.patel.basicscience.databinding.ActivityMainBinding
 
 class Biology : AppCompatActivity() {
 

@@ -5,6 +5,33 @@
     <string name="sample">This text is working n/
     down side</string>
 
+
+    <!--Main menu Banner -->
+
+    <string name="admob_banner_id">ca-app-pub-3940256099942544/9214589741</string>
+    <!--<string name="admob_banner_id">ca-app-pub-8093216699203818/8245310932</string>-->
+
+    <!--Chapter List-->
+    <string name="chap_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="chap_admob_app_id">"ca-app-pub-8093216699203818~1873114718"</string>
+    <!--<string name="chap_admob_adunit_id">"ca-app-pub-8093216699203818/1468120259"</string>-->
+
+    <!--Physics-->
+    <string name="phys_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
+    <!--<string name="phys_admob_adunit_id">"ca-app-pub-8093216699203818/6642529892"</string>-->
+
+    <!--Chemistry-->
+    <string name="chem_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
+    <!--<string name="chem_admob_adunit_id">"ca-app-pub-8093216699203818/2833873200"</string>-->
+
+    <!--Biology-->
+    <string name="bio_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
+    <!--<string name="bio_admob_adunit_id">"ca-app-pub-8093216699203818/2833873200"</string>-->
+
+
+
+
+
     <!-- to toggle the open close button of the navigation drawer -->
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
@@ -12,7 +39,7 @@
     <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
     <string name="test_admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
 
-    <string name="admob_banner_id">ca-app-pub-8093216699203818/8245310932</string>
+
     <string name="chem_admob_banner_id">ca-app-pub-8093216699203818/4017375400</string>
     <string name="bio_admob_banner_id">ca-app-pub-8093216699203818/4779669024</string>
 

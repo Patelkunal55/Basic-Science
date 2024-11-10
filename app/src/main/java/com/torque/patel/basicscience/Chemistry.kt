@@ -1,5 +1,6 @@
 package com.torque.patel.basicscience
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,9 +17,10 @@ import com.torque.patel.basicscience.databinding.ActivityChemistryBinding
 import com.torque.patel.basicscience.databinding.ActivityMainBinding
 
 
+
 private lateinit var binding:ActivityChemistryBinding
 
-class Chemistry : AppCompatActivity(), OnItemClickListners {
+class Chemistry: AppCompatActivity(), OnItemClickListners {
     private lateinit var adView: AdView
     private lateinit var adRequest: AdRequest
 
@@ -27,7 +29,10 @@ class Chemistry : AppCompatActivity(), OnItemClickListners {
 
 
     //val adId : String = "ca-app-pub-3940256099942544/2247696110"  // this a tes Ads
-    val adId : String = "ca-app-pub-8093216699203818/2833873200"
+    //val adId : String = "ca-app-pub-8093216699203818/2833873200"
+
+    //val adId = context.applicationContext.getString(R.string.chem_admob_adunit_id)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +68,7 @@ class Chemistry : AppCompatActivity(), OnItemClickListners {
     }
 
     private fun getList():ArrayList<Any>{
+        val adId = getString(R.string.chem_admob_adunit_id)
 
         //val no:Int = 0
         val number:Int = intent.getIntExtra("number",0)

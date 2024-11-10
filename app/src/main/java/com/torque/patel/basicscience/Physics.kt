@@ -1,6 +1,8 @@
 package com.torque.patel.basicscience
 
+import android.content.Context
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adView: AdView
     private lateinit var adRequest: AdRequest
 
+
     private lateinit var binding:ActivityMainBinding
 
     private var mInterstitialAd: InterstitialAd? = null
@@ -31,7 +34,9 @@ class MainActivity : AppCompatActivity() {
     private final val TAG = "MainActivity"
 
     //val adId : String = "ca-app-pub-3940256099942544/2247696110" //this is test Ads
-    val adId : String = "ca-app-pub-8093216699203818/6642529892"
+    //val adId : String = "ca-app-pub-8093216699203818/6642529892"
+
+
 
 
 
@@ -40,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
 
 
 
@@ -123,6 +128,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun getList():ArrayList<Any>{
+
+        val adId = getString(R.string.phys_admob_adunit_id)
 
         val number:Int = intent.getIntExtra("number",0)
 

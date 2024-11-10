@@ -20,6 +20,10 @@ import com.torque.patel.basicscience.databinding.SecondChap2Binding
 class SecondChapViewHolder(private val binding: SecondChap2Binding):RecyclerView.ViewHolder(binding.root) {
     //private lateinit var adLoader: AdLoader
 
+    val appId = itemView.context.getString(R.string.chap_admob_app_id)
+
+    val adUnitId = itemView.context.getString(R.string.chap_admob_adunit_id)
+
 
     fun bind(dataChap: DataChap){
         val frameLayout: FrameLayout = itemView.findViewById(R.id.small_templates_frame)
@@ -29,14 +33,14 @@ class SecondChapViewHolder(private val binding: SecondChap2Binding):RecyclerView
             .setAdChoicesPlacement(NativeAdOptions.ADCHOICES_BOTTOM_RIGHT)
             .build()
 
-        //var adLoader = AdLoader.Builder(itemView.context, "ca-app-pub-3940256099942544~3347511713")//this is test Id
-        var adLoader = AdLoader.Builder(itemView.context, "ca-app-pub-8093216699203818~1873114718")
+        //var adLoader = AdLoader.Builder(itemView.context, "ca-app-pub-3940256099942544~3347511713")//this is test app Id
+        var adLoader = AdLoader.Builder(itemView.context,appId)
             .withNativeAdOptions(nativeAdOptions)
             .build()
 
 
-        //adLoader = AdLoader.Builder(itemView.context,"ca-app-pub-3940256099942544/2247696110")//this is test Id
-        adLoader = AdLoader.Builder(itemView.context,"ca-app-pub-8093216699203818/6642529892")
+        //adLoader = AdLoader.Builder(itemView.context,"ca-app-pub-3940256099942544/2247696110")//this is test Ad unit
+        adLoader = AdLoader.Builder(itemView.context,adUnitId)
             .forNativeAd { ad: NativeAd ->
 
 

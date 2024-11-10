@@ -1,6 +1,6 @@
 package com.torque.patel.basicscience
 
-import android.content.Context
+
 import androidx.recyclerview.widget.RecyclerView
 import com.torque.patel.basicscience.databinding.FirstChap1Binding
 
