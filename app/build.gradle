@@ -11,8 +11,8 @@ android {
         applicationId 'com.torque.patel.basicscience'
         minSdkVersion 24
         targetSdkVersion 34
-        versionCode 29
-        versionName "2.9"
+        versionCode 30
+        versionName "3.0"
 
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -28,10 +28,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = '17'
-        targetCompatibility = '17'
+        //sourceCompatibility = "11"
+        //targetCompatibility = "11"
+
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
+    kotlin {
+        jvmToolchain(11)
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8' // Or your desired JVM target
+    }
 
 
     buildFeatures {
@@ -46,17 +56,34 @@ namespace = "com.torque.patel.basicscience"
 
 }
 
+android {
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.0"
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.12.0'
+    implementation "androidx.compose.material3:material3:1.3.1"
     implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
 
     //implementation 'com.google.android.play:core:1.10.3'
     //implementation 'com.google.android.gms:play-services-ads:22.5.0'
-    implementation 'com.google.android.gms:play-services-ads:23.5.0'
+    implementation 'com.google.android.gms:play-services-ads:23.6.0'
 
 
     //Firebase
@@ -74,6 +101,9 @@ dependencies {
     //implementation 'com.timqi.sectorprogressview:library:2.0.1'
 
     implementation 'com.github.jakob-grabner:Circle-Progress-View:1.4'
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.5'
 
 
     testImplementation 'junit:junit:4.13.2'
@@ -81,7 +111,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.3.2'
-    implementation 'com.google.android.material:material:1.12.0'
+
 
     implementation project(':nativetemplates')
 

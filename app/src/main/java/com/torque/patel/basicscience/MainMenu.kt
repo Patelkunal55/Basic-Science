@@ -75,6 +75,8 @@ class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
     private fun ToolBar(){
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.menu_toolbar)
         toolbar.setTitleTextColor(resources.getColor(R.color.colorWhite))
+        toolbar.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+        //toolbar.setLogo(R.drawable.test_icon)
         toolbar.title = "Main Menu"
         setSupportActionBar(toolbar)
     }
@@ -148,15 +150,29 @@ class MainMenu : AppCompatActivity(),MenuAdapter.OnItemClickListner {
             ExampleItem(R.drawable.physics,"Physics"),
             ExampleItem(R.drawable.chemistry,"Chemistry"),
             ExampleItem(R.drawable.biology,"Biology"),
-           // ExampleItem(R.drawable.ic_satisfied,"Question Quiz"),
+            ExampleItem(R.drawable.ic_satisfied,"Question Quiz"),
         )
 
     }
 
     override fun onItemClick(position: Int) {
-        val intent = Intent(this, ChapterActivity::class.java)
-        intent.putExtra("subject", position)
-        startActivity(intent)
+
+        when(position){
+            in 0..2 -> {
+                val intent = Intent(this, ChapterActivity::class.java)
+                intent.putExtra("subject", position)
+                startActivity(intent)
+            }
+
+            in 3..3-> {
+                val intent = Intent(this, QuizMenu::class.java)
+                intent.putExtra("subject", position)
+                startActivity(intent)
+            }
+
+            else -> {}
+        }
+
 
     }
 

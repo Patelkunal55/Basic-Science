@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Prevent removal of specific classes
+-dontwarn android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener
+
+
+# Prevent removal of interface methods
+-dontwarn android.media.LoudnessCodecController
+
+
+

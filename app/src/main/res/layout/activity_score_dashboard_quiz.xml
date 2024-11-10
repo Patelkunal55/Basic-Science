@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/title_Result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="Excellent!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#6200EA"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_Result"
+        android:background="@color/white"
+        android:padding="24dp">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/resultProgress"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:indicatorColor="@color/gnt_green"
+            app:indicatorSize="200dp"
+            app:trackColor="@color/gnt_red"
+            app:trackThickness="16dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/score_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="48sp"
+                android:text="0"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Correct"
+                android:textStyle="bold"
+                android:textColor="@color/gnt_green"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/result_board"
+        android:padding="3dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/framelayout">
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/result_board">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:background="@drawable/card_bord_total_question">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Questions"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="#A07700"
+                    android:padding="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="20dp"
+                    android:layout_marginTop="60dp"
+                    android:gravity="center"
+                    android:textColor="#A07700"
+                    android:padding="2dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/answer_review"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:background="@drawable/button2_background">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="13dp"
+                    android:src="@drawable/review" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Review Answer"/>
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:background="@drawable/card_bord_total_wrong">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total    Wrong"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#14AE5C"
+                    android:padding="4dp"/>
+
+                <TextView
+                    android:id="@+id/total_wrong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:layout_marginTop="60dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="#14AE5C"
+                    android:padding="2dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/repeat_again"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:background="@drawable/button1_background">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="13dp"
+                    android:src="@drawable/repeat_again" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Repeat Again"/>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:background="@drawable/card_bord_total_skiped">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Skipped"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#8069BF"
+                    android:padding="4dp"/>
+
+                <TextView
+                    android:id="@+id/total_skip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="20dp"
+                    android:layout_marginTop="60dp"
+                    android:gravity="center"
+                    android:textColor="#8069BF"
+                    android:padding="2dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/result_home"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:background="@drawable/button3_background">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="13dp"
+                    android:src="@drawable/home_score" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Home"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
+
+

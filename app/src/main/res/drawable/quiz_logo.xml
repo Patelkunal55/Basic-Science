@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Monitor outline -->
+    <path
+        android:fillColor="#C51162"
+        android:pathData="M20,3H4C2.89,3 2,3.89 2,5V16C2,17.11 2.89,18 4,18H20C21.11,18 22,17.11 22,16V5C22,3.89 21.11,3 20,3ZM20,16H4V5H20V16Z"/>
+
+    <!-- Monitor stand -->
+    <path
+        android:fillColor="#000080"
+        android:pathData="M8,19h8v2h-8z"/>
+
+    <!-- Quiz bubble background -->
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M6,7h12v8h-12z"/>
+
+    <!-- "QUIZ" text -->
+    <path
+        android:fillColor="#000080"
+        android:pathData="M8,9h8v2h-8z"/>
+
+    <!-- Lines below quiz -->
+    <path
+        android:fillColor="#000080"
+        android:pathData="M8,12h8v0.5h-8z"/>
+    <path
+        android:fillColor="#000080"
+        android:pathData="M8,13.5h8v0.5h-8z"/>
+</vector>

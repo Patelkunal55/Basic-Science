@@ -13,13 +13,10 @@
     </style>
     
     
-    <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="android:style/TextAppearance">
-        <item name="android:textColor">@color/colorWhite</item>
-    </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">true</item>
-        <item name="windowNoTitle">true</item>
-    </style>
+
+
+
+
 
 </resources>

@@ -2,6 +2,7 @@ package com.torque.patel.basicscience
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
@@ -17,6 +18,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
@@ -62,7 +64,9 @@ class ChapterActivity : AppCompatActivity(), OnItemClickListener, OnItemClickLis
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         val sub:Int = intent.getIntExtra("subject",0)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorWhite))
+        // Use ContextCompat for better compatibility
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorWhite))
+        toolbar.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.colorPrimary))
         when(sub){
             0-> toolbar.title = "Physics"
             1-> toolbar.title = "Chemistry"
@@ -205,21 +209,21 @@ class ChapterActivity : AppCompatActivity(), OnItemClickListener, OnItemClickLis
         val sub:Int = intent.getIntExtra("subject",0)
         when(sub){
             0 -> {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, PhysicsOne::class.java)
                 intent.putExtra("number", position)
                 startActivity(intent)
                 //Toast.makeText(this, "Item clicked at position $position", Toast.LENGTH_SHORT).show()
             }
 
             1 -> {
-                val intent = Intent(this, Chemistry::class.java)
+                val intent = Intent(this, ChemistryTwo::class.java)
                 intent.putExtra("number", position)
                 startActivity(intent)
                 //Toast.makeText(this, "Item clicked at position $position", Toast.LENGTH_SHORT).show()
             }
 
             2 -> {
-                val intent = Intent(this, Biology::class.java)
+                val intent = Intent(this, BiologyThree::class.java)
                 intent.putExtra("biology", position)
                 startActivity(intent)
                 //Toast.makeText(this, "Item clicked at position $position", Toast.LENGTH_SHORT).show()

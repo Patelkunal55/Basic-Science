@@ -47,8 +47,7 @@ class MenuAdapter(private val exampleList: Array<ExampleItem>,
 
             if (position !=RecyclerView.NO_POSITION){
                 listner.onItemClick(position)
-
-                            }
+            }
         }
 
 
