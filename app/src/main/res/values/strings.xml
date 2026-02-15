@@ -1,32 +1,48 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">General Science Basic</string>
+    <string name="app_logo">General Science Basic</string>
     <string name="navigatin_drawer_open">open navigation drawer</string>
     <string name="navigatin_drawer_close">close navigation drawer</string>
     <string name="sample">This text is working n/
     down side</string>
 
 
-    <!--Main menu Banner -->
+    <!-- New Test Ads -->
 
     <string name="admob_banner_id">ca-app-pub-3940256099942544/9214589741</string>
-    <!--<string name="admob_banner_id">ca-app-pub-8093216699203818/8245310932</string>-->
-
-    <!--Chapter List-->
     <string name="chap_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
-    <string name="chap_admob_app_id">"ca-app-pub-8093216699203818~1873114718"</string>
-    <!--<string name="chap_admob_adunit_id">"ca-app-pub-8093216699203818/1468120259"</string>-->
-
-    <!--Physics-->
     <string name="phys_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
-    <!--<string name="phys_admob_adunit_id">"ca-app-pub-8093216699203818/6642529892"</string>-->
-
-    <!--Chemistry-->
     <string name="chem_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
-    <!--<string name="chem_admob_adunit_id">"ca-app-pub-8093216699203818/2833873200"</string>-->
-
-    <!--Biology-->
     <string name="bio_admob_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
-    <!--<string name="bio_admob_adunit_id">"ca-app-pub-8093216699203818/5369403488"</string>-->
+    <string name="quiz_menu_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="quiz_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="video_ads_adunit">"ca-app-pub-3940256099942544/5224354917"</string>
+    <string name="result_adunit_id">"ca-app-pub-3940256099942544/2247696110"</string>
+    <string name="quiz_interital_ads"> "ca-app-pub-3940256099942544/1033173712"</string>
+
+    <string name="open_ads_main_menu">ca-app-pub-3940256099942544/9257395921</string>
+
+    <string name="menu_quiz_interital_ads"> "ca-app-pub-3940256099942544/1033173712"</string> <!---testAds-->
+
+
+    <!-- ___________________________________________________________________________________________________________________  -->
+
+
+    <!-- New paid Ads -->
+
+    <!--<string name="admob_banner_id">ca-app-pub-8093216699203818/8245310932</string>
+    <string name="chap_admob_app_id">"ca-app-pub-8093216699203818~1873114718"</string>
+    <string name="chap_admob_adunit_id">"ca-app-pub-8093216699203818/1468120259"</string>
+    <string name="phys_admob_adunit_id">"ca-app-pub-8093216699203818/6642529892"</string>
+    <string name="chem_admob_adunit_id">"ca-app-pub-8093216699203818/2833873200"</string>
+    <string name="bio_admob_adunit_id">"ca-app-pub-8093216699203818/5369403488"</string>
+    <string name="quiz_menu_adunit_id">"ca-app-pub-8093216699203818/3803383758"</string>
+    <string name="quiz_adunit_id">"ca-app-pub-8093216699203818/7543023060"</string>
+    <string name="video_ads_adunit">"ca-app-pub-8093216699203818/7916226455"</string>
+    <string name="result_adunit_id">"ca-app-pub-8093216699203818/6832005800"</string>
+
+    <string name="open_ads_main_menu">ca-app-pub-8093216699203818/2847990698</string>
+    <string name="menu_quiz_interital_ads"> "ca-app-pub-8093216699203818/1521829412"</string>-->
 
 
     <!-- to toggle the open close button of the navigation drawer -->
@@ -44,7 +60,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////////
 
     //Mobile Banner Ads
-    <string name="TestAd1">ca-app-pub-3940256099942544/6300978111</string>//Test ads
+    <!--<string name="TestAd1">ca-app-pub-3940256099942544/6300978111</string>//Test ads
     <string name="TestAd2">ca-app-pub-3940256099942544/6300978111</string>//Test ads
     <string name="TestAd3">ca-app-pub-3940256099942544/6300978111</string>//Test ads
 
@@ -54,7 +70,7 @@
 
     <string name="Physics_list">ca-app-pub-8093216699203818/1658681662</string>
     <string name="Chemistry_list">ca-app-pub-8093216699203818/4017375400</string>
-    <string name="Biology_list">ca-app-pub-8093216699203818/3035466224</string>
+    <string name="Biology_list">ca-app-pub-8093216699203818/3035466224</string> -->
 
     //Intersital Ads
     <string name="I1">ca-app-pub-8093216699203818/1793292152</string>
@@ -67,6 +83,81 @@
 
     ////////////////////////////////////////////////////////////////////////////////////////////
 
+    <!-- Physics Topics -->
+    <string-array name="physics_topics">
+        <item>Unit</item>
+        <item>Motion</item>
+        <item>Work, Energy and Power</item>
+        <item>Gravitation</item>
+        <item>Pressure</item>
+        <item>Floatation</item>
+        <item>Surface Tension</item>
+        <item>Viscosity</item>
+        <item>Elasticity</item>
+        <item>Simple Harmonic Motion</item>
+        <item>Wave</item>
+        <item>Sound Wave</item>
+        <item>Heat</item>
+        <item>Light</item>
+        <item>Static Electricity</item>
+        <item>Current Electricity</item>
+        <item>Magnetism</item>
+        <item>Atomic &amp; Nuclear Physics</item>
+        <item>Electronics</item>
+    </string-array>
+
+    <!-- Chemistry Topics -->
+    <string-array name="chemistry_topics">
+        <item>State of Matter</item>
+        <item>Atomic Structure</item>
+        <item>Periodic Classification of Elements</item>
+        <item>Chemical Bonding</item>
+        <item>Oxidation &amp; Reduction</item>
+        <item>Solution</item>
+        <item>Acids, Bases &amp; Salts</item>
+        <item>Behaviour of Gases</item>
+        <item>Electrolysis</item>
+        <item>Carbon and its Compounds</item>
+        <item>Fuel</item>
+        <item>Metallurgy</item>
+    </string-array>
+
+    <!-- Biology Topics -->
+    <string-array name="biology_topics">
+        <item>Introduction to Biology</item>
+        <item>Classification of Organism</item>
+        <item>Study of Cell</item>
+        <item>Genetics</item>
+        <item>Sex Determination in Human</item>
+        <item>Organic Evolution</item>
+    </string-array>
+
+    <!-- Botany Topics -->
+    <string-array name="botany_topics">
+        <item>Classification of Plantae</item>
+        <item>Plant Morphology</item>
+        <item>Plant Tissue</item>
+        <item>Photosynthesis</item>
+        <item>Plant Hormones</item>
+        <item>Plant Disease</item>
+        <item>Ecology</item>
+        <item>Nitrogen Cycle</item>
+        <item>Pollution</item>
+    </string-array>
+
+    <!-- Zoology Topics -->
+    <string-array name="zoology_topics">
+        <item>Classification of Animal Kingdom</item>
+        <item>Animal Tissue</item>
+        <item>Human Blood</item>
+        <item>System of the Human Body</item>
+        <item>Nutrients</item>
+        <item>Human Disease</item>
+    </string-array>
+
+    <!-- Section Headers -->
+    <string name="biology_section">Biology</string>
+    <string name="zoology_section">Zoology</string>
 
     <string name="Physics0">Unit</string>
     <string name="Physics1">Motion</string>
@@ -8826,8 +8917,6 @@ table, th, td {
     </array>
 
 
-
-
     <string-array name="que_2_option_1">
         <item>a) A type of system </item>
         <item>b) A chosen standard for measuring a physical quantity </item>
@@ -8993,28 +9082,27 @@ table, th, td {
     </integer-array>
 
 
-
     <string-array name="queSet3"> <!-- "3.Work,Energy and Power" -->
-        <item>What is the SI unit of work?</item>
-        <item>In which case is the work done by the centripetal force zero?</item>
-        <item>Work is calculated as the product of force, displacement, and which other factor?</item>
-        <item>What is energy defined as?</item>
-        <item>Which type of energy is associated with a body due to its motion?</item>
-        <item>The formula for potential energy in a gravitational field is?</item>
-        <item>What is the unit of power in the SI system?</item>
-        <item>How many joules are equivalent to 1 kilowatt-hour (kWh)?</item>
-        <item>When momentum is doubled, kinetic energy becomes?</item>
-        <item>What is the practical unit of power?</item>
-        <item>What does the principle of conservation of energy state?</item>
-        <item>1 horsepower (H.P.) is equal to how many watts?</item>
-        <item>What is the formula for power?</item>
-        <item>What is the SI unit of energy?</item>
-        <item>Which of these is an example of potential energy?</item>
-        <item>If a body of mass m moves with velocity v, its kinetic energy is given by?</item>
-        <item>What is the relationship between watt and joule?</item>
-        <item>Which of the following is NOT a unit of power?</item>
-        <item>What is the energy transformation in a hydroelectric power plant?</item>
-        <item>What is the principle of conservation of energy mainly used to explain?</item>
+        <item>1.What is the SI unit of work?</item>
+        <item>2.In which case is the work done by the centripetal force zero?</item>
+        <item>3.Work is calculated as the product of force, displacement, and which other factor?</item>
+        <item>4.What is energy defined as?</item>
+        <item>5.Which type of energy is associated with a body due to its motion?</item>
+        <item>6.The formula for potential energy in a gravitational field is?</item>
+        <item>7.What is the unit of power in the SI system?</item>
+        <item>8.How many joules are equivalent to 1 kilowatt-hour (kWh)?</item>
+        <item>9.When momentum is doubled, kinetic energy becomes?</item>
+        <item>10.What is the practical unit of power?</item>
+        <item>11.What does the principle of conservation of energy state?</item>
+        <item>12.1 horsepower (H.P.) is equal to how many watts?</item>
+        <item>13.What is the formula for power?</item>
+        <item>14.What is the SI unit of energy?</item>
+        <item>15.Which of these is an example of potential energy?</item>
+        <item>16.If a body of mass m moves with velocity v, its kinetic energy is given by?</item>
+        <item>17.What is the relationship between watt and joule?</item>
+        <item>18.Which of the following is NOT a unit of power?</item>
+        <item>19.What is the energy transformation in a hydroelectric power plant?</item>
+        <item>20.What is the principle of conservation of energy mainly used to explain?</item>
     </string-array>
 
 
@@ -9043,8 +9131,6 @@ table, th, td {
         <item>@array/que_3_option_19</item>
         <item>@array/que_3_option_20</item>
     </array>
-
-
 
 
     <string-array name="que_3_option_1">
@@ -9083,7 +9169,8 @@ table, th, td {
     </string-array>
 
     <string-array name="que_3_option_6">
-        <item>\( \frac{1}{2}mv^2 \)</item>
+        <item>( 1/2mv\u00B2)</item>
+        <item>1/2mv</item>
         <item>mgh</item>
         <item>F \cdot d</item>
         <item>W/t</item>
@@ -9097,10 +9184,10 @@ table, th, td {
     </string-array>
 
     <string-array name="que_3_option_8">
-        <item>\( 1 \times 10^3 \)</item>
-        <item>\( 1 \times 10^6 \)</item>
-        <item>\( 3.6 \times 10^6 \)</item>
-        <item>\( 3.6 \times 10^3 \)</item>
+        <item>( 1 X 10\u00B3)</item>
+        <item>( 1 X 10\u2076)</item>
+        <item>( 3.6 X 10\u2076)</item>
+        <item>( 3.6 X 10\u00B3)</item>
     </string-array>
 
     <string-array name="que_3_option_9">
@@ -9128,7 +9215,7 @@ table, th, td {
         <item>746</item>
         <item>1000</item>
         <item>3600</item>
-        <item>10\(^6\)</item>
+        <item>10\u2076</item>
     </string-array>
 
     <string-array name="que_3_option_13">
@@ -9154,8 +9241,8 @@ table, th, td {
 
     <string-array name="que_3_option_16">
         <item>mgh</item>
-        <item>\( \frac{1}{2}mv^2 \)</item>
-        <item>F \cdot d</item>
+        <item>(1/2mv² \)</item>
+        <item>F\cdot d</item>
         <item>W/t</item>
     </string-array>
 
@@ -9268,9 +9355,9 @@ table, th, td {
         <item>D) Centripetal Force</item>
     </string-array>
     <string-array name="que_4_option_2">
-        <item>A) 6.67 × 10^-11 Nm^2/kg^2</item>
-        <item>B) 9.8 m/s^2</item>
-        <item>C) 3.14 Nm^2/kg^2</item>
+        <item>A) 6.67 × 10\u207B\u00B9\u00B9 Nm²/kg²</item>
+        <item>B) 9.8 m/s²</item>
+        <item>C) 3.14 Nm²/kg²</item>
         <item>D) 11.2 km/s</item>
     </string-array>
     <string-array name="que_4_option_3">
@@ -9414,7 +9501,6 @@ table, th, td {
         <item>1</item> <!-- 19 -->
         <item>1</item> <!-- 20 -->
     </integer-array>
-
 
 
     <string-array name="queSet5"> <!-- 5. Pressure -->
@@ -9628,7 +9714,6 @@ table, th, td {
         <item>2</item> <!-- 19 -->
         <item>0</item> <!-- 20 -->
     </integer-array>
-
 
 
     <string-array name="queSet6"> <!-- 6. Floatation -->
@@ -10910,7 +10995,6 @@ table, th, td {
     </integer-array>
 
 
-
     <string-array name="queSet12"> <!-- Sound Wave -->
         <item>1. What type of wave is a sound wave?</item>
         <item>2. What is the frequency range of audible waves?</item>
@@ -11146,7 +11230,6 @@ table, th, td {
         <item>19. What is the ratio of emissive power to absorptive power of a surface at a given temperature?</item>
         <item>20. What is the SI unit of latent heat?</item>
     </string-array>
-
 
 
     <array name="optionSet13">
@@ -12401,7 +12484,8 @@ table, th, td {
         <item>1</item> <!-- Q16: Answer is B) Lead (index 1) -->
         <item>0</item> <!-- Q17: Answer is A) Heavy water and graphite (index 0) -->
         <item>2</item> <!-- Q18: Answer is C) Robert Pierre and Marie Curie (index 2) -->
-        <item>1</item> <!-- Q19: Answer is B) Mass decreases by 4, atomic number decreases by 2 (index 1) -->
+        <item>1
+        </item> <!-- Q19: Answer is B) Mass decreases by 4, atomic number decreases by 2 (index 1) -->
         <item>3</item> <!-- Q20: Answer is D) Absorb heat and prevent overheating (index 3) -->
     </integer-array>
 
@@ -12618,8 +12702,6 @@ table, th, td {
         <item>0</item> <!-- Q19: Answer is a) -->
         <item>1</item> <!-- Q20: Answer is b) -->
     </integer-array>
-
-
 
 
     <!--************************************** Chemistry Quiz **************************************-->
@@ -13007,10 +13089,10 @@ table, th, td {
     </string-array>
 
     <string-array name="que_21_option_18">
-    <item>a) 1</item>
-    <item>b) 2</item>
-    <item>c) 3</item>
-    <item>d) 4</item>
+        <item>a) 1</item>
+        <item>b) 2</item>
+        <item>c) 3</item>
+        <item>d) 4</item>
     </string-array>
 
     <string-array name="que_21_option_19">
@@ -13043,13 +13125,13 @@ table, th, td {
         <item>1</item> <!-- Q13: Answer is (b) Hertz -->
         <item>0</item> <!-- Q14: Answer is (a) 3 × 10⁸ m/s -->
         <item>1</item> <!-- Q15: Answer is (b) 6.626 × 10⁻³⁴ J·s -->
-        <item>1</item> <!-- Q16: Answer is (b) Electrons in orbitals fill singly first, then pair up. -->
+        <item>1
+        </item> <!-- Q16: Answer is (b) Electrons in orbitals fill singly first, then pair up. -->
         <item>2</item> <!-- Q17: Answer is (c) n -->
         <item>2</item> <!-- Q18: Answer is (c) 3 -->
         <item>1</item> <!-- Q19: Answer is (b) Shape of the electron cloud -->
         <item>1</item> <!-- Q20: Answer is (b) -2 to +2 -->
     </integer-array>
-
 
 
     <string-array name="queSet22">
@@ -13241,7 +13323,6 @@ table, th, td {
         <item>C) Absorbed during hydration</item>
         <item>D) Released during hydration</item>
     </string-array>
-
 
 
     <integer-array name="answers22">
@@ -13478,7 +13559,6 @@ table, th, td {
         <item>0</item> <!-- Q19: A -->
         <item>0</item> <!-- Q20: A -->
     </integer-array>
-
 
 
     <string-array name="queSet24">
@@ -14436,11 +14516,13 @@ table, th, td {
     </string-array>
 
     <integer-array name="answers28">
-        <item>1</item> <!--Q1 B: Substances that allow electricity to pass and undergo chemical decomposition -->
+        <item>1
+        </item> <!--Q1 B: Substances that allow electricity to pass and undergo chemical decomposition -->
         <item>1</item> <!--Q2 B: NaCl -->
         <item>1</item> <!--Q3 B: Electrolytes that do not ionize completely in solution -->
         <item>2</item> <!--Q4 C: CH3COOH -->
-        <item>1</item> <!--Q5 B: The process of chemical decomposition of an electrolyte by electricity -->
+        <item>1
+        </item> <!--Q5 B: The process of chemical decomposition of an electrolyte by electricity -->
         <item>1</item> <!--Q6 B: To pass current through an electrolyte -->
         <item>1</item> <!--Q7 B: Electrode attached to the positive terminal of a battery -->
         <item>1</item> <!--Q8 B: Reduction -->
@@ -14661,7 +14743,6 @@ table, th, td {
         <item>1</item> <!-- Q19: B -->
         <item>1</item> <!-- Q20: B -->
     </integer-array>
-
 
 
     <string-array name="queSet30">
@@ -15070,11 +15151,6 @@ table, th, td {
         <item>2</item> <!-- Q19:C -->
         <item>1</item> <!-- Q20:B -->
     </integer-array>
-
-
-
-
-
 
 
     <string-array name="queSet32">
@@ -17678,11 +17754,6 @@ table, th, td {
     </integer-array>
 
 
-
-
-
-
-
     <string-array name="queSet44">
         <!-- From Passage "bio24" - Plant Diseases -->
         <item>1. What is the cause of Mosaic disease of tobacco?</item>
@@ -18139,7 +18210,6 @@ table, th, td {
         <item>1</item> <!-- Q19: Humidity, light, air -->
         <item>2</item> <!-- Q20: Secondary consumers -->
     </integer-array>
-
 
 
     <string-array name="queSet46">
@@ -19728,26 +19798,46 @@ table, th, td {
     </string-array>
 
     <integer-array name="answers53">
-        <item>1</item> ** Q1 B **
-        <item>0</item> ** Q2 A **
-        <item>2</item> ** Q3 C **
-        <item>1</item> ** Q4 B **
-        <item>1</item> ** Q5 B **
-        <item>2</item> ** Q6 C **
-        <item>0</item> ** Q7 A **
-        <item>0</item> ** Q8 A **
-        <item>1</item> ** Q9 B **
-        <item>2</item> ** Q10 C **
-        <item>1</item> ** Q11 B **
-        <item>0</item> ** Q12 A **
-        <item>1</item> ** Q13 B **
-        <item>2</item> ** Q14 C **
-        <item>1</item> ** Q15 B **
-        <item>2</item> ** Q16 C **
-        <item>2</item> ** Q17 C **
-        <item>0</item> ** Q18 A **
-        <item>1</item> ** Q19 B **
-        <item>2</item> ** Q20 C **
+        <item>1</item>
+        ** Q1 B **
+        <item>0</item>
+        ** Q2 A **
+        <item>2</item>
+        ** Q3 C **
+        <item>1</item>
+        ** Q4 B **
+        <item>1</item>
+        ** Q5 B **
+        <item>2</item>
+        ** Q6 C **
+        <item>0</item>
+        ** Q7 A **
+        <item>0</item>
+        ** Q8 A **
+        <item>1</item>
+        ** Q9 B **
+        <item>2</item>
+        ** Q10 C **
+        <item>1</item>
+        ** Q11 B **
+        <item>0</item>
+        ** Q12 A **
+        <item>1</item>
+        ** Q13 B **
+        <item>2</item>
+        ** Q14 C **
+        <item>1</item>
+        ** Q15 B **
+        <item>2</item>
+        ** Q16 C **
+        <item>2</item>
+        ** Q17 C **
+        <item>0</item>
+        ** Q18 A **
+        <item>1</item>
+        ** Q19 B **
+        <item>2</item>
+        ** Q20 C **
     </integer-array>
 
 
@@ -19839,7 +19929,7 @@ table, th, td {
         <item>A) Asthma</item>
         <item>B) Diarrhoea</item>
         <item>C) Ringworm</item>
-        <item>D) Athlete's foot</item>
+        <item>D) Athlete\'s foot</item>
     </string-array>
 
     <string-array name="que_54_option_7">
@@ -19962,9 +20052,6 @@ table, th, td {
         <item>1</item> <!-- Q19: B -->
         <item>3</item> <!-- Q20: D -->
     </integer-array>
-
-
-
 
 
     <!-- Strings used for fragments for navigation -->

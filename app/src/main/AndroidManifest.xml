@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.torque.patel.basicscience">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,27 +16,50 @@
         android:theme="@style/AppTheme"
         tools:targetApi="35">
         <activity
-            android:name=".QuizMenu"
-            android:exported="false" >
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
+
+
         <activity
-            android:name=".ScoreDashBoard"
+            android:name=".Custom_Radios"
+            android:exported="false"></activity>
+        <activity
+            android:name=".MainChapter"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Chapter_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".MainMenu"
             android:exported="false">
 
         </activity>
+        <activity
+            android:name=".QuizDashboard"
+            android:exported="false"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".QuizMenu"
+            android:exported="false" />
+        <activity
+            android:name=".ScoreDashBoard"
+            android:exported="false" />
         <activity
             android:name=".Result"
             android:exported="false" />
         <activity
             android:name=".Quiz"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".BiologyThree"
-            android:exported="false"
-            android:theme="@style/AppTheme" />
+            android:exported="false" />
         <activity
             android:name=".ChemistryTwo"
             android:exported="false" />
@@ -45,23 +69,11 @@
         <activity
             android:name=".PhysicsOne"
             android:exported="false" />
-        <activity
-            android:name=".MainMenu"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8093216699203818~1873114718" /> <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+            android:value="ca-app-pub-3940256099942544~3347511713" /> <!-- android:value="ca-app-pub-8093216699203818~1873114718" /> -->
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <!-- Real AdMob app ID: ca-app-pub-8093216699203818~1873114718 -->
         <meta-data
             android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"

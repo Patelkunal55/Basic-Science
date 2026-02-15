@@ -16,11 +16,12 @@ import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdOptions
 import com.google.android.gms.ads.nativead.NativeAdView
 import com.torque.patel.basicscience.databinding.SecondChap2Binding
+import com.torque.patel.basicscience.DataItems.DataChap
 
 class SecondChapViewHolder(private val binding: SecondChap2Binding):RecyclerView.ViewHolder(binding.root) {
     //private lateinit var adLoader: AdLoader
 
-    val appId = itemView.context.getString(R.string.chap_admob_app_id)
+    val appId = itemView.context.getString(R.string.chap_admob_adunit_id)
 
     val adUnitId = itemView.context.getString(R.string.chap_admob_adunit_id)
 

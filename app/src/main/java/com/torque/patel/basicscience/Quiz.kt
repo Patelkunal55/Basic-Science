@@ -2,136 +2,121 @@ package com.torque.patel.basicscience
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
+import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.torque.patel.basicscience.adapter.QuizAdapter
+import com.torque.patel.basicscience.DataItems.QuizListItem
 import java.util.ArrayList
 
 class Quiz : AppCompatActivity() {
     private lateinit var quizAdapter: QuizAdapter
     private val quizItems = mutableListOf<QuizListItem>()
 
+    lateinit var mainViewModel: MainViewModel
+
+    private var mInterstitialAd: InterstitialAd? = null
+    private final var TAG = "MainActivity"
+
+
+
+
+
+
+    //private var intertialAds : String = R.string.quiz_interital_ads
 
 
     @SuppressLint("Recycle")
-    private fun loadQuestionsFromResources(intentTestSet:Int): List<Question> {
+    private fun loadQuestionsFromResources(intentTestSet: Int): List<Question> {
 
         //val intent :Int = intent.getIntExtra("question",0)
 
-        val intent = intent.getIntExtra("question",0)
+        val intent = intent.getIntExtra("question", 0)
 
 
+        mainViewModel = ViewModelProvider(this).get(MainViewModel::class)
 
-        val setQuestion1 = arrayOf(R.array.question,R.array.queSet2,R.array.queSet3,
-            R.array.queSet4,R.array.queSet4, R.array.queSet5,R.array.queSet6,R.array.queSet7,
-            R.array.queSet8,R.array.queSet9,R.array.queSet10,R.array.queSet11, R.array.queSet11,
-            R.array.queSet12,R.array.queSet13,R.array.queSet14,R.array.queSet15,R.array.queSet16,
-            R.array.queSet16,R.array.queSet17,R.array.queSet18,R.array.queSet19)
-
-
-        val setQuestion2 = arrayOf(R.array.queSet20,R.array.queSet21,R.array.queSet22,
-            R.array.queSet23,R.array.queSet24,R.array.queSet25,R.array.queSet26,R.array.queSet27,
-            R.array.queSet28,R.array.queSet29,R.array.queSet30,R.array.queSet31)
-
-        val setQuestion3 = arrayOf(R.array.queSet32,R.array.queSet33,R.array.queSet34,
-            R.array.queSet35,R.array.queSet36,R.array.queSet37,R.array.queSet38,R.array.queSet39,
-            R.array.queSet40,R.array.queSet41,R.array.queSet42,R.array.queSet43,R.array.queSet44,
-            R.array.queSet45,R.array.queSet46,R.array.queSet47,R.array.queSet48,R.array.queSet49,
-            R.array.queSet50,R.array.queSet51,R.array.queSet52,R.array.queSet53,R.array.queSet54)
-
-       val setQuestion = when(intentTestSet){
-            0 -> {setQuestion1
-            //Toast.makeText(this,"Question Set 1",Toast.LENGTH_SHORT).show()
+        val setQuestion = when (intentTestSet) {
+            0 -> {
+                mainViewModel.setQuestion1
+                //Toast.makeText(this,"Question Set 1",Toast.LENGTH_SHORT).show()
             }
-            1 ->{
+
+            1 -> {
                 //Toast.makeText(this,"Question Set 2",Toast.LENGTH_SHORT).show()
-                setQuestion2
+                mainViewModel.setQuestion2
             }
-           2 -> {
-               setQuestion3
-           }
-            else -> setQuestion1
+
+            2 -> {
+                mainViewModel.setQuestion3
+            }
+
+            else -> mainViewModel.setQuestion1
         }
 
-        val setOption1 = arrayOf(R.array.optionR,R.array.optionSet2,R.array.optionSet3,
-            R.array.optionSet4,R.array.optionSet4, R.array.optionSet5,R.array.optionSet6,
-            R.array.optionSet7,R.array.optionSet8,R.array.optionSet9,R.array.optionSet10,
-            R.array.optionSet11,R.array.optionSet11,R.array.optionSet12,R.array.optionSet13,
-            R.array.optionSet14, R.array.optionSet15,R.array.optionSet16,R.array.optionSet16,
-            R.array.optionSet17,R.array.optionSet18,R.array.optionSet19)
-
-        val setOption2 = arrayOf(R.array.optionSet20,R.array.optionSet21,R.array.optionSet22,
-            R.array.optionSet23,R.array.optionSet24,R.array.optionSet25,R.array.optionSet26,R.array.optionSet27
-            ,R.array.optionSet28,R.array.optionSet29,R.array.optionSet30,R.array.optionSet31)
-
-        val setOption3 = arrayOf(R.array.optionSet32, R.array.optionSet33, R.array.optionSet34,
-            R.array.optionSet35,R.array.optionSet36,R.array.optionSet37,R.array.optionSet38,
-            R.array.optionSet39,R.array.optionSet40,R.array.optionSet41,R.array.optionSet42,R.array.optionSet43,
-            R.array.optionSet44,R.array.optionSet45,R.array.optionSet46,R.array.optionSet47,R.array.optionSet48,
-            R.array.optionSet49,R.array.optionSet50,R.array.optionSet51,R.array.optionSet52,R.array.optionSet53,R.array.optionSet54)
-        val setOption = when(intentTestSet){
-            0 -> { setOption1
+        val setOption = when (intentTestSet) {
+            0 -> {
+                mainViewModel.setOption1
                 //Toast.makeText(this,"Option Set 1",Toast.LENGTH_SHORT).show()
             }
+
             1 -> {
-                setOption2
-            }
-            2 -> {
-                setOption3
+                mainViewModel.setOption2
             }
 
-            else -> {setOption1}
+            2 -> {
+                mainViewModel.setOption3
+            }
+
+            else -> {
+                mainViewModel.setOption1
+            }
 
         }
 
-
-        val setAnswer1 = arrayOf(R.array.answers,R.array.answers2,R.array.answers3,R.array.answers4,R.array.answers4,
-            R.array.answers5,R.array.answers6,R.array.answers7,R.array.answers8,R.array.answers9,R.array.answers10,R.array.answers11,
-            R.array.answers11,R.array.answers12,R.array.answers13,R.array.answers14,R.array.answers15,R.array.answers16,R.array.answers16,
-            R.array.answers17,R.array.answers18,R.array.answers19)
-
-        val setAnswer2 = arrayOf(R.array.answers20,R.array.answers21,R.array.answers22,
-            R.array.answers23,R.array.answers24,R.array.answers25,R.array.answers26,R.array.answers27,
-            R.array.answers28,R.array.answers29,R.array.answers30,R.array.answers31)
-
-        val setAnswer3 = arrayOf(R.array.answers32,R.array.answers33,R.array.answers34,
-            R.array.answers35,R.array.answers36,R.array.answers37,R.array.answers38,R.array.answers39,
-            R.array.answers40,R.array.answers41,R.array.answers42,R.array.answers43,R.array.answers44,
-            R.array.answers45,R.array.answers46,R.array.answers47,R.array.answers48,R.array.answers49,
-            R.array.answers50,R.array.answers51,R.array.answers52,R.array.answers53,R.array.answers54)
-
-
-
-
-        val setAnswer = when(intentTestSet){
-            0 -> {setAnswer1
+        val setAnswer = when (intentTestSet) {
+            0 -> {
+                mainViewModel.setAnswer1
                 //Toast.makeText(this,"Answer Set 1",Toast.LENGTH_SHORT).show()
             }
+
             1 -> {
-                setAnswer2
+                mainViewModel.setAnswer2
             }
 
             2 -> {
-                setAnswer3
+                mainViewModel.setAnswer3
             }
 
-            else -> {setAnswer1}
+            else -> {
+                mainViewModel.setAnswer1
+            }
         }
+
         val getQuestion = setQuestion[intent]
         val getOption = setOption[intent]
         val getAnswer = setAnswer[intent]
 
         //Toast.makeText(this,intent.toString(),Toast.LENGTH_SHORT).show()
-
 
 
         val questions = resources.getStringArray(getQuestion)
@@ -157,19 +142,30 @@ class Quiz : AppCompatActivity() {
     }
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
+
+
+
+        val number:Int = intent.getIntExtra("number",0)
+
 
         // Initialize the Mobile Ads SDK
         MobileAds.initialize(this)
 
 
 
-         // Load questions from resources
 
-        val intentTestSet = intent.getIntExtra("testSet",0)
+
+
+
+
+        // Load questions from resources
+
+        val intentTestSet = intent.getIntExtra("testSet", 0)
+
+        //Toast.makeText(this,"Position: ${intentTestSet}",Toast.LENGTH_SHORT).show()
         val questions = loadQuestionsFromResources(intentTestSet)
 
         questions.forEachIndexed { index, question ->
@@ -180,36 +176,201 @@ class Quiz : AppCompatActivity() {
             }
         }
 
+        toolBar(intentTestSet)
 
+        val backBtn = findViewById<ImageView>(R.id.btnBack)
+        backBtn.setOnClickListener {
 
+            onBackPressedBtn(intentTestSet)
 
-
-
+        }
 
         // Convert questions to QuizListItems and add ad placeholders
 
 
         val recyclerView = findViewById<RecyclerView>(R.id.quizRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        quizAdapter = QuizAdapter(quizItems)
+        quizAdapter = QuizAdapter(quizItems, intentTestSet)
         recyclerView.adapter = quizAdapter
 
         loadNativeAd()
 
+        loadInterstitialAd()
+
+
         findViewById<Button>(R.id.submitButton).setOnClickListener {
             checkAnswers()
+
+
+        }
+
+        val callback = object : OnBackPressedCallback(true) { // 'true' means the callback is enabled initially
+            override fun handleOnBackPressed() {
+                // Your custom logic to handle the back event
+                // If you want the system's default behavior, disable this callback
+                // and call onBackPressedDispatcher.onBackPressed()
+
+                when(intentTestSet){
+
+                    in 0..2 -> {
+                        val intent = Intent(application, QuizMenu::class.java)
+                        intent.putExtra("number", intentTestSet)
+                        startActivity(intent)
+                    }
+
+                }
+            }
+        }
+        onBackPressedDispatcher.addCallback(this, callback)
+
+
+    }
+
+
+
+    private fun loadInterstitialAd() {
+        val adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(
+            this,
+            getString(R.string.menu_quiz_interital_ads), // Replace with your ad unit ID
+            adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    Log.d(TAG, adError.toString())
+                    mInterstitialAd = null
+                }
+
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    Log.d(TAG, "Ad was loaded.")
+                    mInterstitialAd = interstitialAd
+                    setFullScreenContentCallback()
+                }
+            }
+        )
+    }
+
+    private fun setFullScreenContentCallback() {
+        mInterstitialAd?.fullScreenContentCallback = object :
+            FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                Log.d(TAG, "Ad was dismissed.")
+                // Called when ad is dismissed.
+                // Set the ad reference to null so you don't show the ad a second time.
+                mInterstitialAd = null
+                // Load the next ad
+                loadInterstitialAd()
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                Log.e(TAG, "Ad failed to show.")
+                // Called when ad fails to show.
+                mInterstitialAd = null
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                Log.d(TAG, "Ad showed fullscreen content.")
+                // Called when ad is shown.
+            }
+        }
+    }
+
+    private fun showInterstitialAd() {
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this)
+        } else {
+            Log.d(TAG, "The interstitial ad wasn't ready yet.")
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        showInterstitialAd()
+    }
+
+
+
+    private fun toolBar(num: Int) {
+
+
+
+        //toolbar.setTitleTextColor(resources.getColor(R.color.colorWhite)) // set Title text color
+
+
+        when(num){
+            0 -> configureToolbar("Physics Quiz",R.drawable.ic_quiz_icon,R.color.colorPrimary)
+            1 -> configureToolbar("Chemistry Quiz",R.drawable.ic_quiz_icon,R.color.colorYello)
+            2 -> configureToolbar("Biology Quiz",R.drawable.ic_quiz_icon,R.color.colorGreenLight)
+        }
+
+
+        //setSupportActionBar(toolbar)
+
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        // Set the back button color to white
+        //supportActionBar?.setHomeAsUpIndicator(R.drawable.arrow_back_2)
+        //val upArrow = ContextCompat.getDrawable(this, R.drawable.arrow_back_2)
+        //upArrow?.setColorFilter(
+           // ContextCompat.getColor(this, R.color.colorWhite),
+            //PorterDuff.Mode.SRC_ATOP
+        //)
+        //supportActionBar?.setHomeAsUpIndicator(upArrow)
+    }
+
+    fun configureToolbar(title: String,logoRes:Int,colorRes:Int){
+
+        val logo_img = findViewById<ImageView>(R.id.toolbar_logo_img)
+        val tool_text = findViewById<TextView>(R.id.toolbar_text)
+
+        val toolbar = findViewById<Toolbar>(R.id.quiz_toolbar)
+        tool_text.text = title
+        logo_img.setImageResource(logoRes)
+        toolbar.backgroundTintList = ContextCompat.getColorStateList(this, colorRes)
+        window.statusBarColor = ContextCompat.getColor(this, colorRes)
+
+    }
+
+    private fun onBackPressedBtn(num:Int) {
+
+
+        when(num){
+
+            in 0..2 -> {
+                val intent = Intent(this, QuizMenu::class.java)
+                intent.putExtra("number", num)
+                startActivity(intent)
+            }
+
         }
 
 
 
     }
 
-    private fun loadNativeAd() {
-        val adLoader = AdLoader.Builder(    this, "ca-app-pub-3940256099942544/2247696110") // Test ad unit ID
-            .forNativeAd { nativeAd ->
-                quizAdapter.setNativeAd(nativeAd)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                this.finish()
+                true
+
             }
-            .build()
+
+            else -> super.onOptionsItemSelected(item)
+
+        }
+    }
+
+    private fun loadNativeAd() {
+        val adLoader =
+            AdLoader.Builder(this, getString(R.string.quiz_adunit_id)) // Test ad unit ID
+                .forNativeAd { nativeAd ->
+                    quizAdapter.setNativeAd(nativeAd)
+
+
+                }
+                .build()
 
         adLoader.loadAd(AdRequest.Builder().build())
     }
@@ -257,27 +418,25 @@ class Quiz : AppCompatActivity() {
             }
 
 
-
-
         }
-
-
 
 
         val totalQuestions = quizItems.count { it is QuizListItem.QuestionItem }
 
-        Toast.makeText(
+        /*Toast.makeText(
             this,
             "Score: $score/$totalQuestions | Wrong: $wrong | Skipped: $skipped",
             Toast.LENGTH_LONG
-        ).show()
+        ).show()*/
 
         //val totalQuestions = quizItems.count { it is QuizListItem.QuestionItem }
         //Toast.makeText(this, "Your score: $score/$totalQuestions Wrong: $wrong", Toast.LENGTH_LONG).show()
-
+        val intentTestSet = intent.getIntExtra("testSet", 0)
+        val que_intent = intent.getIntExtra("question", 0)
         // Move to Next Activity i.e ScoreDashBoard
         val intent = Intent(this, ScoreDashBoard::class.java)
-            intent.apply {
+
+        intent.apply {
             // Pass data using putExtra
             putStringArrayListExtra("QUESTIONS", ArrayList(questionsList))
             putStringArrayListExtra("OPTIONS", ArrayList(optionsList.map { it.joinToString("|") }))
@@ -287,6 +446,12 @@ class Quiz : AppCompatActivity() {
             putExtra("TOTAL_QUESTIONS", totalQuestions)
             putExtra("TOTAL_WRONG", wrong)
             putExtra("TOTAL_SKIPPED", skipped)
+
+            putExtra("testSet", intentTestSet)
+            putExtra("question", que_intent)
+
+            //Toast.makeText(this@Quiz, "Position: ${que_intent} ", Toast.LENGTH_LONG).show()
+
         }
 
         // Start the ResultActivity

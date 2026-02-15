@@ -3,6 +3,7 @@ package com.torque.patel.basicscience
 
 import androidx.recyclerview.widget.RecyclerView
 import com.torque.patel.basicscience.databinding.FirstChap1Binding
+import com.torque.patel.basicscience.DataItems.DataChap
 
 class FirstChapViewHolder(private val binding:FirstChap1Binding, private val clickListener: OnItemClickListner):RecyclerView.ViewHolder(binding.root) {
 
@@ -24,7 +25,8 @@ class FirstChapViewHolder(private val binding:FirstChap1Binding, private val cli
 
         binding.numbering.text = dataChap.no.toString()
         binding.nameChapter.text = dataChap.chapterName
-        binding.rectangleImgId.setImageResource(dataChap.rectangle_icon)
+        binding.relativeLayout.setBackgroundResource(dataChap.rectangle_icon)
+        //binding.rectangleImgId.setImageResource(dataChap.rectangle_icon)
 
     }
 

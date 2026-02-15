@@ -5,23 +5,63 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Quiz">
+    tools:context=".Quiz"
+    android:fitsSystemWindows="true">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/quiz_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/teal_200"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/arrow_back_2"
+            android:contentDescription="Back"
+            android:padding="8dp" />
+
+        <ImageView
+            android:id="@+id/toolbar_logo_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_physics_logo"
+            android:contentDescription="Back"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quiz Chapter"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/quizRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:padding="8dp"
         app:layout_constraintBottom_toTopOf="@id/submitButton"
-        android:padding="8dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/quiz_toolbar" />
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/newcolorBlue"
+        android:textColor="@color/white"
         android:text="Submit"
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

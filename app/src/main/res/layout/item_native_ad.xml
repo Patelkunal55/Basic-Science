@@ -9,8 +9,10 @@
 
 
         <LinearLayout
+            android:id="@+id/ad_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -81,12 +83,17 @@
                 android:textSize="14sp" />
 
 
-            <com.google.android.material.button.MaterialButton
+
+            <Button
                 android:id="@+id/ad_call_to_action"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/gradient_toolbar"
                 android:textColor="@color/white"/>
+
+
+
 
             <!--<androidx.appcompat.widget.AppCompatButton
 

@@ -16,4 +16,13 @@
     <color name="colorPink">#FF4081</color>
     <color name="colorBlack">#090909</color>
     <color name="orange">#FF9D3D</color>
+    <color name="newcolorBlue">#1A80E5</color>
+    <color name="my_status_bar_color">#03DAC5</color>
+
+    <color name="my_special_toolbar_color">#3F51B5</color>
+
+
+    <color name="colorPrimarys">#03DAC5</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
 </resources>

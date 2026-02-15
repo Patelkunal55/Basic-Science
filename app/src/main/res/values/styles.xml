@@ -1,14 +1,39 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
 
-        <!-- Customize your theme here. -->
+
+
+
+    </style>-->
+
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here -->
+
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlNormal">@color/colorWhite</item>
+
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="NativeAdTheme">
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:padding">8dp</item>
+    </style>
+    <!-- Solution: Change the parent to a theme that includes an ActionBar -->
+    <style name="Theme.BasicScience"
+        parent="Theme.Material3.DayNight"><!-- or parent="Theme.AppCompat.Light.DarkActionBar" -->
+        <!-- or parent="Theme.MaterialComponents.DayNight.DarkActionBar" -->
+
+        <!-- Customize your theme colors -->
+        <item name="colorPrimary">@color/my_status_bar_color</item>
 
     </style>
     

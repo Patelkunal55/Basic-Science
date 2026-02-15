@@ -24,26 +24,22 @@
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:id="@+id/relative_layout"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/blue_box">
 
-                <ImageView
-                    android:id="@+id/rectangle_img_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="1dp"
-                    android:src="@drawable/rectangle" />
+
 
                 <TextView
                     android:id="@+id/numbering"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/rectangle_img_id"
-                    android:layout_alignEnd="@+id/rectangle_img_id"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="-1dp"

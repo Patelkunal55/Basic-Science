@@ -5,32 +5,21 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
+import android.graphics.PorterDuff
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
-import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
-import com.google.android.gms.ads.nativead.NativeAd
-import com.google.android.gms.ads.nativead.NativeAdOptions
-import com.google.android.gms.ads.nativead.NativeAdView
-import com.torque.patel.basicscience.ChapViewAdapter.Companion.FIRST_VIEW
-import com.torque.patel.basicscience.ChapViewAdapter.Companion.SECOND_VIEW
+import com.torque.patel.basicscience.adapter.ChapViewAdapter
+import com.torque.patel.basicscience.adapter.ChapViewAdapter.Companion.FIRST_VIEW
+import com.torque.patel.basicscience.adapter.ChapViewAdapter.Companion.SECOND_VIEW
 import com.torque.patel.basicscience.databinding.ActivityChapterBinding
+import com.torque.patel.basicscience.DataItems.DataChap
 
 class ChapterActivity : AppCompatActivity(), OnItemClickListener, OnItemClickListner {
 
@@ -60,6 +49,7 @@ class ChapterActivity : AppCompatActivity(), OnItemClickListener, OnItemClickLis
     }
 
 
+    @SuppressLint("WrongViewCast")
     private fun ToolBar(){
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -67,14 +57,39 @@ class ChapterActivity : AppCompatActivity(), OnItemClickListener, OnItemClickLis
         // Use ContextCompat for better compatibility
         toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorWhite))
         toolbar.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.colorPrimary))
+
+
+
         when(sub){
-            0-> toolbar.title = "Physics"
-            1-> toolbar.title = "Chemistry"
-            2-> toolbar.title = "Biology"
+
+
+
+            0-> {
+                toolbar.title = "  Physics"
+                toolbar.setLogo(R.drawable.ic_physics_logo)
+                //relativeLayout.setBackgroundResource(R.drawable.blue_box)
+            }
+
+            1-> {toolbar.title = "  Chemistry"
+                toolbar.setLogo(R.drawable.ic_chemistry_logo)
+                //relativeLayout.setBackgroundResource(R.drawable.yellow_box)
+            }
+
+            2-> {
+                toolbar.title = "  Biology"
+                toolbar.setLogo(R.drawable.ic_biology_logo)
+                //relativeLayout.setBackgroundResource(R.drawable.green_box)
+            }
 
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        // Set the back button color to white
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_button)
+        val upArrow = ContextCompat.getDrawable(this, R.drawable.ic_back_button)
+        upArrow?.setColorFilter(ContextCompat.getColor(this, R.color.colorWhite), PorterDuff.Mode.SRC_ATOP)
+        supportActionBar?.setHomeAsUpIndicator(upArrow)
 
     }
 
@@ -115,80 +130,80 @@ class ChapterActivity : AppCompatActivity(), OnItemClickListener, OnItemClickLis
 
 
 
-                DataChap(FIRST_VIEW,"Unit",1,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Motion",2,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Work,Energy and Power",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Gravitation",4,R.drawable.rectangle),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Pressure",5,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Floatation",6,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Surface Tension",7,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Viscosity",8,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Elasticity",9,R.drawable.rectangle),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Simple Harmonic Motion",10,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Wave",11,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Sound Wave",12,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Heat",13,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Light",14,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Static Electricity",15,R.drawable.rectangle),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Current Electricity",16,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Magnetism",17,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Atomic & Nuclear Physics",18,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Electronics",19,R.drawable.rectangle),
+                DataChap(FIRST_VIEW,"Unit",1,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Motion",2,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Work,Energy and Power",3,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Gravitation",4,R.drawable.blue_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Pressure",5,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Floatation",6,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Surface Tension",7,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Viscosity",8,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Elasticity",9,R.drawable.blue_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Simple Harmonic Motion",10,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Wave",11,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Sound Wave",12,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Heat",13,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Light",14,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Static Electricity",15,R.drawable.blue_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Current Electricity",16,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Magnetism",17,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Atomic & Nuclear Physics",18,R.drawable.blue_box),
+                DataChap(FIRST_VIEW,"Electronics",19,R.drawable.blue_box),
             )
 
             1 ->return arrayListOf(
 
-                DataChap(FIRST_VIEW,"State of Matter",1,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Atomic Structure",2,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Periodic Classification of Elements",3,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Chemical Bonding",4,R.drawable.rectangle_2),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Oxidation & Reduction",5,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Solution",6,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Acids,Bases & Salts",7,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Behaviour of Gases",8,R.drawable.rectangle_2),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Electrolysis",9,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Carbon and its Compounds",10,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Fuel",11,R.drawable.rectangle_2),
-                DataChap(FIRST_VIEW,"Metallurgy",12,R.drawable.rectangle_2),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
+                DataChap(FIRST_VIEW,"State of Matter",1,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Atomic Structure",2,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Periodic Classification of Elements",3,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Chemical Bonding",4,R.drawable.yellow_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Oxidation & Reduction",5,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Solution",6,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Acids,Bases & Salts",7,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Behaviour of Gases",8,R.drawable.yellow_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Electrolysis",9,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Carbon and its Compounds",10,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Fuel",11,R.drawable.yellow_box),
+                DataChap(FIRST_VIEW,"Metallurgy",12,R.drawable.yellow_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.yellow_box),
             )
 
             2 ->return arrayListOf(
 
-                DataChap(FIRST_VIEW,"Introduction Biology",1,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Classification of Organism",2,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Study of Cell -Cytology",3,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Genetics",4,R.drawable.rectangle_3),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Sex Determination in Human",5,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Organic Evolution",6,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Biology",0,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Classification of Plantae",1,R.drawable.rectangle_3),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Plant Morphology",2,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Plant Tissue",3,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Photosynthesis",4,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Plant Hormones",5,R.drawable.rectangle_3),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Plant Disease",6,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Ecology",7,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Nitrogen Cycle",8,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Pollution",9,R.drawable.rectangle_3),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"Zoology",0,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Classification of Animal Kingdom",1,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Animal Tissue",2,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Human Blood",3,R.drawable.rectangle_3),
-                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.rectangle),
-                DataChap(FIRST_VIEW,"System of the Human Body",4,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Nutrients",5,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Human Disease",6,R.drawable.rectangle_3),
-                DataChap(FIRST_VIEW,"Plant Hormones",6,R.drawable.rectangle_3),
+                DataChap(FIRST_VIEW,"Introduction Biology",1,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Classification of Organism",2,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Study of Cell -Cytology",3,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Genetics",4,R.drawable.green_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Sex Determination in Human",5,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Organic Evolution",6,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Biology",0,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Classification of Plantae",1,R.drawable.green_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Plant Morphology",2,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Plant Tissue",3,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Photosynthesis",4,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Plant Hormones",5,R.drawable.green_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Plant Disease",6,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Ecology",7,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Nitrogen Cycle",8,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Pollution",9,R.drawable.green_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Zoology",0,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Classification of Animal Kingdom",1,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Animal Tissue",2,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Human Blood",3,R.drawable.green_box),
+                DataChap(SECOND_VIEW,"Momentum",3,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"System of the Human Body",4,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Nutrients",5,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Human Disease",6,R.drawable.green_box),
+                DataChap(FIRST_VIEW,"Plant Hormones",6,R.drawable.green_box),
             )
 
             else -> return arrayListOf(

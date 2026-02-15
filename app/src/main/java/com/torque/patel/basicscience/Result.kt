@@ -1,17 +1,17 @@
 package com.torque.patel.basicscience
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
+import com.torque.patel.basicscience.adapter.ResultAdapter
+import com.torque.patel.basicscience.DataItems.ResultItem
 
 class Result : AppCompatActivity() {
 
@@ -56,6 +56,10 @@ class Result : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
+        toolbar()
+
+
+
         val result = loadResultFromResource()
 
         result.forEachIndexed { index, question ->
@@ -77,6 +81,8 @@ class Result : AppCompatActivity() {
 
         loadNativeAd()
 
+
+
         findViewById<Button>(R.id.result_submitButton).setOnClickListener {
             val intent = Intent(this, MainMenu::class.java)
             startActivity(intent)
@@ -84,8 +90,27 @@ class Result : AppCompatActivity() {
         }
     }
 
+
+    private fun toolbar(){
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.quiz_result_toolbar)
+        toolbar.setTitleTextColor(resources.getColor(R.color.colorWhite)) // set Title text color
+        toolbar.title = "  Result" // set Title of toolbar
+        toolbar.setLogo(R.drawable.ic_quiz_icon)//set Icon
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        // Set the back button color to white
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.arrow_back_2)
+        val upArrow = ContextCompat.getDrawable(this, R.drawable.arrow_back_2)
+        upArrow?.setColorFilter(ContextCompat.getColor(this, R.color.colorWhite), PorterDuff.Mode.SRC_ATOP)
+        supportActionBar?.setHomeAsUpIndicator(upArrow)
+
+    }
+
     private fun loadNativeAd() {
-        val adLoader = AdLoader.Builder(    this, "ca-app-pub-3940256099942544/2247696110") // Test ad unit ID
+        val adLoader = AdLoader.Builder(    this, getString(R.string.result_adunit_id)) // Test ad unit ID
             .forNativeAd { nativeAd ->
                 resultAdapter.setNativeAd(nativeAd)
             }

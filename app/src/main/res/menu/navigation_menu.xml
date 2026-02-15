@@ -7,15 +7,16 @@
             android:title="Home" />
         <item
             android:id="@+id/nav_physics"
-            android:icon="@drawable/ic_black_dot"
+            android:icon="@drawable/nav_physics_logo"
             android:title="Physics" />
         <item
             android:id="@+id/nav_chemistry"
-            android:icon="@drawable/ic_black_dot"
+            android:icon="@drawable/nav_chemistry_logo"
             android:title="Chemistry" />
+
         <item
             android:id="@+id/nav_biology"
-            android:icon="@drawable/ic_black_dot"
+            android:icon="@drawable/nav_biology_logo"
             android:title="Biology" />
 
     </group>

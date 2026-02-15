@@ -26,6 +26,8 @@ class ScoreDashBoard : AppCompatActivity() {
 
 
 
+
+
         // Load rewarded ad
         loadRewardedAd()
 
@@ -40,6 +42,7 @@ class ScoreDashBoard : AppCompatActivity() {
         val totalWrong = intent.getIntExtra("TOTAL_WRONG", 0)
         val totalSkipped = intent.getIntExtra("TOTAL_SKIPPED", 0)
 
+
         val scoreNumber = findViewById<TextView>(R.id.score_number)
         val totalWrongNumber = findViewById<TextView>(R.id.total_wrong)
         val totalSkippedNumber = findViewById<TextView>(R.id.total_skip)
@@ -53,8 +56,9 @@ class ScoreDashBoard : AppCompatActivity() {
 
             totalScore >= 15 -> result_title.text = "Excellent!"
             totalScore >= 10 -> result_title.text = "Good!"
-            totalScore <= 10 -> result_title.text = "Not Bad!"
-            totalScore <= 5 -> result_title.text = "Poor!"
+            totalScore >= 5 -> result_title.text = "Not Bad!"
+            totalScore >= 5 -> result_title.text = "Poor!"
+            totalScore >= 0 -> result_title.text = "Very Poor!"
 
 
         }
@@ -70,8 +74,20 @@ class ScoreDashBoard : AppCompatActivity() {
             finish()
         }
 
+        val number = intent.getIntExtra("testSet",0)
+        val que_intent = intent.getIntExtra("question",0)
+
+        //val test_set = intent.getIntExtra("testSet",0)
+
         repeatButton.setOnClickListener {
-            Toast.makeText(this, "Repeat Button Clicked", Toast.LENGTH_SHORT).show()
+            val num:Int = 2
+            val intent = Intent(this, Quiz::class.java)
+            intent.putExtra("testSet",number)
+            intent.putExtra("question",que_intent)
+            //intent.putExtra("testSet",test_set)
+            startActivity(intent)
+            finish()
+            //Toast.makeText(this, "Repeat Button Clicked: ${number}", Toast.LENGTH_SHORT).show()
         }
 
         reviewButton.setOnClickListener {
@@ -87,7 +103,7 @@ class ScoreDashBoard : AppCompatActivity() {
         //MobileAds.initialize(this)
         val adRequest = AdRequest.Builder().build()
 
-        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917", adRequest, object : RewardedAdLoadCallback() {
+        RewardedAd.load(this, getString(R.string.video_ads_adunit), adRequest, object : RewardedAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 rewardedAd = null
             }
@@ -159,6 +175,7 @@ class ScoreDashBoard : AppCompatActivity() {
         userAnswers: List<Int>,
         correctAnswers: List<Int>
     ) {
+
         val intent = Intent(this, Result::class.java)
         intent.putStringArrayListExtra("QUESTIONS", ArrayList(questions))
         intent.putStringArrayListExtra("OPTIONS", ArrayList(optionsR.map { it.joinToString("|") }))

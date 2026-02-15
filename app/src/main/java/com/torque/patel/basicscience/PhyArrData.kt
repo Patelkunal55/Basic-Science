@@ -1,6 +1,7 @@
 package com.torque.patel.basicscience
 
 import androidx.appcompat.app.AppCompatActivity
+import com.torque.patel.basicscience.DataItems.DataItem
 
 class PhyArrData(private val context: AppCompatActivity) {
 
@@ -10,22 +11,22 @@ class PhyArrData(private val context: AppCompatActivity) {
                 0 -> addUnitsChapter()
                 1 -> addMotionChapter()
                 2 -> addWorkEnergyChapter()
-                3 -> addGravitationChapter()
+                4 -> addGravitationChapter()
                 5 -> addPressureChapter()
                 6 -> addFloatationChapter()
                 7 -> addSurfaceTensionChapter()
                 8 -> addViscosityChapter()
                 9 -> addElasticityChapter()
-                11 -> addHarmonicMotionChapter()
-                12 -> addWaveChapter()
-                13 -> addSoundWaveChapter()
-                14 -> addHeatChapter()
-                15 -> addLightChapter()
-                16 -> addStaticElectricityChapter()
-                18 -> addCurrentElectricityChapter()
-                19 -> addMagnetismChapter()
-                20 -> addAtomicPhysicsChapter()
-                21 -> addElectromagnetismChapter()
+                10 -> addHarmonicMotionChapter()
+                11 -> addWaveChapter()
+                12 -> addSoundWaveChapter()
+                13 -> addHeatChapter()
+                14 -> addLightChapter()
+                15 -> addStaticElectricityChapter()
+                16 -> addCurrentElectricityChapter()
+                17 -> addMagnetismChapter()
+                18 -> addAtomicPhysicsChapter()
+                19 -> addElectromagnetismChapter()
                 else -> add(DataItem.TextItem("Data Not Found", context.resources.getString(R.string.phy2)))
             }
         }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@id/end"
+        motion:duration="2000"
+        motion:autoTransition="animateToEnd">
+
+        <KeyFrameSet>
+            <!-- Logo fade in -->
+            <KeyAttribute
+                motion:motionTarget="@id/logo"
+                motion:framePosition="0"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/logo"
+                motion:framePosition="50"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/logo"
+                motion:framePosition="100"
+                android:alpha="1" />
+
+            <!-- Text fade in starts after logo is visible -->
+            <KeyAttribute
+                motion:motionTarget="@id/app_name"
+                motion:framePosition="50"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/app_name"
+                motion:framePosition="100"
+                android:alpha="1" />
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <!-- Logo starts centered and invisible -->
+        <Constraint
+            android:id="@id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:alpha="0" />
+
+        <!-- Text is invisible at start -->
+        <Constraint
+            android:id="@id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/logo"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:alpha="0" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <!-- Logo ends in center and visible -->
+        <Constraint
+            android:id="@id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:alpha="1" />
+
+        <!-- Text is fully visible at end -->
+        <Constraint
+            android:id="@id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/logo"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:alpha="1" />
+    </ConstraintSet>
+
+</MotionScene>

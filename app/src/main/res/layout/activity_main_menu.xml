@@ -5,7 +5,8 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenu">
+    tools:context=".MainMenu"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:id="@+id/linear_layout"
@@ -13,25 +14,44 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/menu_toolbar"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:elevation="4dp"
-            app:title="This is toolbar"
-            tools:ignore="MissingConstraints" />
-
-        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/adView"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/admob_banner_id">
-            <!--ads:adUnitId="@string/test_admob_banner_id" //test ads-->
-            <!--ads:adUnitId="@string/admob_banner_id"-->
-        </com.google.android.gms.ads.AdView>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/menu_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/teal_200"
+                android:elevation="4dp"
+                app:title="This is toolbar"
+                tools:ignore="MissingConstraints"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"/>
+
+        <LinearLayout
+            android:id="@+id/dotsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewPager"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:gravity="center" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
@@ -42,20 +62,18 @@
             tools:listitem="@layout/example_item" />
 
 
-
     </LinearLayout>
 
 
 
-    <RelativeLayout
+
+
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/my_drawer_layout"
         android:gravity="center">
-
-
-
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 
     <com.google.android.material.navigation.NavigationView
@@ -65,10 +83,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/navigation_menu" />
-
-
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

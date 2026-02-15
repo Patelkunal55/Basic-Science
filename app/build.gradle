@@ -6,13 +6,17 @@ apply plugin: 'org.jetbrains.kotlin.android'
 
 
 
+
 android {
+    compileSdk 36
+    namespace = "com.torque.patel.basicscience"
+
     defaultConfig {
         applicationId 'com.torque.patel.basicscience'
         minSdkVersion 24
-        targetSdkVersion 34
-        versionCode 30
-        versionName "3.0"
+        targetSdkVersion 36
+        versionCode 34
+        versionName "3.4"
 
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -28,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        //sourceCompatibility = "11"
-        //targetCompatibility = "11"
+        sourceCompatibility = "11"
+        targetCompatibility = "11"
 
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        //sourceCompatibility "1.8"
+        //targetCompatibility "1.8"
     }
 
     kotlin {
@@ -40,33 +44,17 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = '1.8' // Or your desired JVM target
+        jvmTarget = '11' // Or your desired JVM target
     }
 
 
     buildFeatures {
         viewBinding true
-    }
-}
-
-android{
-    compileSdk 34
-namespace = "com.torque.patel.basicscience"
-    //testNamespace = "com.torque.patel.basicscience"
-
-}
-
-android {
-    buildFeatures {
-        compose true
+        compose false
     }
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.0"
-    }
-
-    kotlinOptions {
-        jvmTarget = '11'
     }
 }
 
@@ -75,19 +63,21 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation "androidx.compose.material3:material3:1.3.1"
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.compose.material3:material3:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+
 
     //implementation 'com.google.android.play:core:1.10.3'
-    //implementation 'com.google.android.gms:play-services-ads:22.5.0'
-    implementation 'com.google.android.gms:play-services-ads:23.6.0'
+    implementation 'com.google.android.gms:play-services-ads:24.9.0'
+    implementation "com.google.android.play:review:2.0.2"
+    //implementation 'com.google.android.gms:play-services-ads:24.1.0'
 
 
     //Firebase
-    //implementation 'com.google.firebase:firebase-ads:23.2.0'
+    //implementation 'com.google.firebase:firebase-ads:23.2.0
     //implementation 'com.google.firebase:firebase-core:21.1.1'
 
     //implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
@@ -95,22 +85,29 @@ dependencies {
 
     //Library Section
     implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+     //implementation 'com.github.chrisbanes:PhotView:2.1.3'
     //implementation 'gr.pantrif:easy-android-splash-screen:0.0.1'
     //implementation 'com.google.android.play:core:1.10.3'
     //implementation 'com.timqi.sectorprogressview:library:2.0.1'
 
-    implementation 'com.github.jakob-grabner:Circle-Progress-View:1.4'
-    implementation 'androidx.activity:activity:1.9.3'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.8.5'
+    //implementation 'com.github.jakob-grabner:Circle-Progress-View:1.4'
+    implementation 'androidx.activity:activity:1.12.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.9.6'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.9.6'
+    implementation 'androidx.lifecycle:lifecycle-process:2.10.0'
+    implementation 'com.google.android.play:review-ktx:2.0.2'
 
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test:runner:1.6.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+
+    def lifecycle_version = '2.8.0'
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
 
     implementation project(':nativetemplates')

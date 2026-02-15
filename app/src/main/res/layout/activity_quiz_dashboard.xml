@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizDashboard"
+    android:fitsSystemWindows="true">
+
+    <!--<androidx.appcompat.widget.Toolbar
+        android:id="@+id/quiz_dashboard_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/teal_200"
+        android:elevation="4dp"
+        app:title="This is toolbar"
+        tools:ignore="MissingConstraints" />-->
+
+    <!-- Header Section -->
+    <RelativeLayout
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/gradient_header"
+        android:padding="24dp">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/arrow_back_2"
+        android:contentDescription="Back"
+        android:padding="8dp" />
+
+    <!-- Title Text -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="24dp">
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, Dear"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:alpha="0.9" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What Do You Want To Improve"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_section"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/gradient_white_color"
+        android:layout_marginTop="-50dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/db_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+            tools:listitem="@layout/card_dashboard"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
